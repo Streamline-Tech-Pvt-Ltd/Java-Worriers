@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Normal function...............................................
+
+        //  function myfunction(){
+        //    return "Hello World"
+        //   }
+
+        //   let msg = myfunction();
+        //   console.log(msg);
+
+        // addition of numbers using function..............................
+
+        //   function add(a,b){
+        //    console.log("addition of a and b is :", a+b);
+        //   }
+        //   addition = add(10,20);
+
+
+        // function Expression..............................................
+
+        //  const calculateSalary = function(basic, bonus){
+        //    return basic+bonus;
+        //    }
+        //   console.log("salary",calculateSalary(10000,2000));
+        
+
+        //  Arrow function...................................................
+
+        //   const add = (a,b) => a+b;
+        //   console.log(add(6,6));
+
+
+        // this keyword in arrow function
+
+        // const person = {
+        //    name : "Rahul",
+        //    greet : function(){
+        //        return this.name;
+        //   }
+        //  }
+        //   console.log(person.greet());  
+
+        // factorial using function...........................................................................
+        function factorial(a){
+            let fact = 1;
+            let f = 1;
+            while(fact <= a){
+            f = f * fact;
+            fact++;
+           }
+           console.log("factorial of ",a,":",f);
+        }
+
+        let factorial1 = factorial(4);
+        console.log(factorial1);
+
+        let factorial2 = factorial(5);
+        console.log(factorial2);
+
+         
+    </script>
+</body>
+</html>

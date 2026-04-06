@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        .main{
+            background-color:black;
+           margin-left:400px;
+           margin-top:80px;
+           width:300px;
+           padding:20px;
+        }
+
+        button{
+            height: 60px;
+            width: 65px;
+            padding:10px;
+            margin-left:5px;
+            margin-top:5px;
+            margin-bottom:5px;
+            cursor: pointer;
+           }
+
+        input{
+            width:280px;
+            height:50px;
+            margin-left:5px;
+            margin-top:5px;
+            margin-bottom:10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+            <input type="text">
+            <br>
+        
+
+        <div>
+           <button  onclick="calculat()">C</button>
+           <button  onclick="calculat()">DEL</button>
+           <button  onclick="appendValue()">/</button>
+           <button  onclick="appendValue()">*</button>
+        </div>
+
+        <div>
+            <button onclick="appendValue()">7</button>
+            <button onclick="appendValue()">8</button>
+            <button onclick="appendValue()">9</button>
+            <button onclick="appendValue()">-</button>
+        </div>
+
+        <div>
+            <button onclick="appendValue()">4</button>
+            <button onclick="appendValue()">5</button>
+            <button onclick="appendValue()">6</button>
+            <button onclick="appendValue()">+</button>
+        </div>
+
+        <div>
+             <button onclick="appendValue()">1</button>
+             <button onclick="appendValue()">2</button>
+             <button onclick="appendValue()">3</button>
+             <button onclick="appendValue()">%</button>
+        </div>
+
+        <div>
+             <button onclick="appendValue()">0</button>
+             <button onclick="appendValue()">.</button>
+             <button onclick="calculat()">=</button>
+        </div>
+    </div>
+
+    
+</body>
+</html>

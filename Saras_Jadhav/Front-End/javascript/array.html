@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+          // Array in javascript...................................................................
+          const car = ["hyundai" , "maruti" , "Tata"];
+          console.log(car);
+
+
+          // Array length............................................................................
+          const cars = ["hyundai","mahendre","volvo"];
+          let car1 = cars.length;
+          console.log(car1);
+
+
+          // Array length........................................................................... 
+          const cars1 = ["hyundai","mahendre","volvo"];
+          cars1.length=2
+          console.log(cars1);
+
+          // Array join................................................................................
+          const fruits = ["Banana","orenge","Apple","Mango"];
+          let fruit =fruits.join("*");
+          console.log(fruit);
+
+          // Array pop()................................................................................
+          const fruit1 = ["Banana","orange","Apple","Mango"];
+          fruit1.pop();
+          console.log(fruit1);
+
+          // Array push add element in Array......................................................
+           const fruit2 = ["Banana","orange","Apple","Mango"];
+           fruit2.push("Kiwi");
+           console.log(fruit2);
+
+          // Array unshift add element in frant of Array............................................
+            const fruit3 = ["Banana","orange","Apple","Mango"];
+           fruit3.unshift("Kiwi");
+           console.log(fruit3);
+
+          // Array sort by assending order............................................................
+            const fruit4= ["Banana","orange","Apple","Mango"];
+            fruit4.sort();
+            console.log(fruit4);
+          
+        // Array revrse................................................................................
+            const fruit5 = ["Banana","orange","Apple","Mango"];
+            fruit5.reverse();
+            console.log(fruit5);
+
+        // Array filter...........................................................................
+         const number = [23,45,12,15,34];
+         age = number.filter(myfunction);
+
+         function myfunction(value){
+            return value > 18;
+         }
+         console.log(age);
+
+         // Array Spread(...)...................................................................................
+         const num1 = [ 1,2,3];
+         const num2 = [4,5,6];
+         const num3 = [...num1,...num2];
+         console.log(num3);
+
+
+
+
+    </script>
+</body>
+</html>

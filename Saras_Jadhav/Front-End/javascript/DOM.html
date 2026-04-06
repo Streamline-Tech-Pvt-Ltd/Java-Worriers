@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    
+  <!--  <img id="myimg" src="imagepath">   ...for changing attribute and element-->
+    <p id="demo">hello world</p>
+
+    <script>
+ // DOM(document object model) Finding HTML element by Id.........................................................
+
+    //const element = document.getElementsById("intro");
+
+    //document.getElementById("demo").innerHTML = "The intro paragraph is:" + element.innerHTML;
+
+//Finding HTML element by Tag name...............................................................................
+
+    //const element = document.getElementsByTagName("p");
+
+    //document.getElementById("demo").innerHTML = "The text is frist paragraph:" + element[0].innerHTML;
+
+// finding HTML element by class name.............................................................................
+
+    // const x = document.getElementsByClassName("intro");
+
+    // document.getElementById("demo").innerHTML = 'the frist paragraph with class ="intro" is ' + x[1].innerHTML;
+
+// finding HTML element by query Selector.............................................................................
+
+    // const myitems = document.querySelector("#one");
+
+    // const myitems2 = document.querySelector(".demo");
+
+    // myitems.innerHTML = "Hello world";
+
+    // myitems2.innerHTML = "welcome to JS";
+
+// finding HTML element by query Selector All........................................................................
+
+    // const myitems = document.querySelectorAll(".demo");
+    // myitems[0].innerHTML = "first";
+    // myitems[1].innerHTML = "second";  
+
+// finding changing attribute and element...........................................................................
+   
+    //document.getElementById("myimage").src = "new image path";
+    
+// style change....................................................................................................
+
+   document.getElementById("demo").style.color = "red";
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maps</title>
+</head>
+<body>
+    <script>
+          // Maps first way to create........................................................................
+        const fruit = new Map();
+
+        fruit.set("apple",200);
+        fruit.set("mango",300);
+        fruit.set("orange",100);
+        console.log(fruit);
+
+        // second way to create Maps..........................................................................
+         const fruits = new Map([
+            ["banana",60],
+            ["apple",200],
+            ["kiwi",300]
+             ]);
+            
+            console.log(fruits);
+
+        // Adding map values.................................................................................
+          const fruit1 = new Map([
+            ["banana",60],
+            ["apple",200],
+            ["kiwi",300]
+             ]);
+            fruit1.set("mango",300);
+            console.log(fruit1);
+
+        // get() method.......................................................................................
+
+         const fruit2 = new Map([
+            ["banana",60],
+            ["apple",200],
+            ["kiwi",300]
+             ]);
+            fruit2.set("mango");
+            console.log(fruit2);
+
+        // value prite using get().............................................................................
+        const fruit3 = new Map([
+            ["banana",60],
+            ["apple",200],
+            ["kiwi",300]
+             ]);
+           let value = fruit3.get("banana");
+            console.log(value);
+
+        // delete ................................................................................................
+        const fruit4 = new Map([
+            ["banana",60],
+            ["apple",200],
+            ["kiwi",300]
+             ]);
+           let value1 = fruit4.delete("banana");
+            console.log(fruit4);
+
+        // clear to all records...................................................................................
+        const fruit5 = new Map([
+            ["banana",60],
+            ["apple",200],
+            ["kiwi",300]
+             ]);
+            fruit5.clear();
+            console.log(fruit5);
+
+       // alert..................................................................................................
+          // alert("welcome to javascript..");
+
+      // confirm alert............................................................................................
+     // let msg = confirm("Are you sure..");
+      // consolee.log(msg);
+
+      // prompt alert..................................................................................................
+      let name = prompt ("enter your name..");
+      console.log(name);
+
+    </script>
+    
+</body>
+</html>

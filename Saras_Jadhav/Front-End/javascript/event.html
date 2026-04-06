@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+</head>
+<body>
+    <!-- <button onclick="showmsg()">click me!</button>  inline-->
+    <!-- <button id="btn">click me</button> using DOM property -->
+    <!-- <button id="btn">click</button>-->  
+      <input id="k" type="text" placeholder="Press a key">
+          <p id="demo"></p>
+
+ 
+    
+    <script>
+    // inline
+
+       // function showmsg(){
+       //  alert("button click");
+       //   }
+
+    // using DOM property
+
+        //  document.getElementById("btn").onclick = function(){
+        //    alert("clicked..");
+        //     }
+
+    // addEventListener
+         
+        //  document.getElementById("btn").addEventListener("click",function(){
+        //    alert("button click");
+        //  }
+    const k = document.getElementById("k");
+
+// Let k listen for keydown
+k.addEventListener("keydown", function (event) {
+
+// Then display the event.key
+  document.getElementById("demo").innerHTML = "You pressed: " + event.key;
+});
+
+
+
+
+    </script>
+</body>
+</html>

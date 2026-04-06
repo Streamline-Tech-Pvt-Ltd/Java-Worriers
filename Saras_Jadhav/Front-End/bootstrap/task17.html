@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Product Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+    .card:hover {
+      transform: scale(1.05);
+      transition: 0.3s;
+    }
+  </style>
+
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-dark sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="logo2.png" alt="" width="95" height="55" class="d-inline-block align-text-top bg-light ">
+      </a>
+      <ul class="nav justify-content-end">
+  <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+ </ul>
+</div>
+</nav>
+
+<div style="background-image: url('amazon3.jpg');  background-size:cover;"><br>
+    <h1 class=" text-center bg-warning mb-3"> “Big Sale – Up to 50% Off”</h1>
+    <div class="text-center">
+      <button class="btn btn-warning text-center" style="margin-top:380px;">Shop Now</button>
+    </div>
+</div>
+<hr>
+
+
+<div class="container py-5 " id="products">
+  <h2 class="text-center mb-4 text-danger">Products</h2><br>
+
+  <div class="row g-4">
+
+    <div class="col-md-3 col-sm-6 col-12">
+  <div class="card position-relative">
+    <span class="badge bg-danger position-absolute top-0 start-0 m-2">Sale</span>
+    <img src="i20.jpg" class="card-img-top">
+    <div class="card-body text-center">
+      <h5 class="card-title">Hyundai i20</h5>
+      <p class="card-text">price:10,00,000</p>
+      <button class="btn btn-primary">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+    
+    <div class="col-md-3 col-sm-6 col-12">
+      <div class="card position-relative">
+        <span class="badge bg-danger badge-sale position-absolute top-0 start-0 m-2">Sale</span>
+        <img src="venue.png" class="card-img-top">
+        <div class="card-body text-center">
+          <h5 class="card-title">Hyundai venue</h5>
+          <p class="card-text">price:15,00,000</p>
+          <button class="btn btn-primary">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+     <div class="col-md-3 col-sm-6 col-12">
+      <div class="card position-relative">
+        <span class="badge bg-danger badge-sale position-absolute top-0 start-0 m-2">Sale</span>
+        <img src="creta.jpg" class="card-img-top">
+        <div class="card-body text-center">
+          <h5 class="card-title">Hyundai Creta</h5>
+          <p class="card-text">price:20,00,000</p>
+          <button class="btn btn-primary">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+     <div class="col-md-3 col-sm-6 col-12 ">
+      <div class="card position-relative">
+        <span class="badge bg-danger badge-sale position-absolute top-0 start-0 m-2">Sale</span>
+        <img src="alcazar.jpg" height="176px" class="card-img-top">
+        <div class="card-body text-center">
+          <h5 class="card-title">Hyundai Alcazar</h5>
+          <p class="card-text">price:25,00,000</p>
+          <button class="btn btn-primary">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+   </div>  
+   </div>
+
+   <hr>
+  <div class="bg-light py-5">
+  <div class="container py-5" id="contact">
+  <h2 class="text-center mb-4 text-danger">Contact </h2>
+
+   <div class="mb-3">
+  <label for="Name" class="form-label">Name:-</label>
+  <input type="text" class="form-control" id="name">
+</div>
+  <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Email address:-</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Address</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+</div>
+ <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Mobile:-</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="123456789">
+</div>
+<button class="btn btn-success text-center">Submit</button>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  
+</body>
+</html>

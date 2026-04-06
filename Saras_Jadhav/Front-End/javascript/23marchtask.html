@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.Write a program using a for loop to print all even numbers from 1 to 20.
+        
+      //  let i = " ";
+      //  console.log("even number:");
+      //  for(i = 0; i<=20; i++){
+      //  if(i % 2 == 0){
+      //      console.log(i);
+      // }
+      //}
+
+       // 2.Write a program using a while loop to calculate the sum of numbers from 1 to 5.
+
+      // let n = 1;
+      // let sum = 0 ;
+      // while(n <= 5){
+      //   sum = sum + n;
+      //  n++;
+      //  }
+      //  console.log("addition:",sum);
+
+       // 3. Write a program using a while loop to calculate the sum of numbers from 1 to 5.
+       
+       //  let I = 1;
+       //  let add = 0;
+       //  do{
+       //   add = add + I;
+       //    I++;
+       //   }while(I<=5);
+      //   console.log("addition:",add);
+
+       //4.	Write a program using a loop that prints numbers from 1 to 10, but skips number 5 using continue.
+       
+        //  let j = " ";
+       // for(j = 1; j <= 10; j++){
+       //   if(j == 5){
+       //         continue;
+        //    }
+        //  console.log(j);
+       //     }
+
+
+        // 5 .Write a program using a while loop to find the factorial of a number.
+       
+       //  let s = 1;
+       // let f = 4;
+       //  let factorial = 1;
+       // while (s <= f){
+       //  factorial *= s; 
+       //  s++;
+       //   }
+       //   console.log("factorial is", factorial);
+
+
+         // 6 .Print the table of 2 using do...while loop.
+         
+        //   let  t = 1;
+        //   let  k = 2;
+        //   let  l = 1;
+        //   console.log("2 table:\n")
+        //   do{
+        //    if(t % 2 == 0){
+        //        console.log(k,"*",l,"=",t);
+        //        l++;
+        //    }
+        //    t++;
+        //    }while(t <= 20)
+        
+
+        // 7.Check number is palindrome or not.
+
+        //   let n = 161;
+        //   let d = 0;
+        //   let rev = 0;
+        //   let num = n;
+
+        //   while(n > 0){
+        //   d = n % 10;
+        //   rev = rev * 10 + d;
+        //   n = n / 10;
+        //   }
+        //   if(num == rev){
+        //    console.log("number is palindrom");
+        //    }
+        //    else{
+        //    console.log("number is not palindrom");
+        //    }
+
+
+        // 8. Check whether a number is prime or not.
+
+        let Num = 7;
+        let i = 2 ;
+        flag = 1;
+
+        if ( Num <= 1){
+            flag = 0;
+        }else{
+            while( Num > i){
+                if(Num % i == 0){
+                    flag = 0;
+                    break;
+                }
+                i++;
+            }
+        }
+        if(flag == 1){
+            console.log("number is prime");
+        }else{
+            console.log("number is not prime");
+        }
+
+
+    </script>
+</body>
+</html>
