@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let number1 = 2;
+        let number2 = 4;
+        let operator = '*';
+        let output;
+
+        switch(operator) {
+            case '+':
+            output= number1 + number2;
+            console.log("addition", output);
+            break;
+
+            case '-':
+            output = number1 - number2;
+            console.log("substraction" , output);
+            break;
+
+            case '*':
+             output = number1 * number2;
+            console.log("multiplication",  output);
+            break;
+
+
+            case '%':
+             output = number1 % number2;
+            console.log("modulo",  output);
+            break;
+
+            default:
+            console.log("invalid operarator");
+        }
+    </script>
+</body>
+</html>

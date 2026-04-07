@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce product page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .card {
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .badge-sale {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-dark ">
+        <div class="container">
+            <a class="navbar-brand text-warning" href="#">
+                <img src="download.jpg" alt="cricket image" width="80" height="80" class="rounded-circle">
+                Cricket Techi
+            </a>
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Product">Product</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">contact</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <div
+        style="background-image: url('Cricket ground background.jpg'); height: 1000px; background-size: cover; background-position: center; ;">
+        <br><br><br><br><br><br>
+
+        <div class="d-flex justify-content-center" id="Home">
+            <h1 class="card text-white bg-danger mb-3"> “Big Sale – Up to 50% Off”</h1>
+        </div>
+        <blockquote class="blockquote  d-flex justify-content-center">
+            <h3 class="text-light "> Check out the New product..</h3>
+        </blockquote>
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+            <button class="btn btn-info    me-md-2" type="button">Shop Now</button>
+        </div>
+        <br><br><br><br><br><br><br><br><br>
+
+
+
+        <h1 class="d-flex justify-content-center text-warning">Products</h1><br>
+        <div class="container" id="Product">
+
+            <div class="row row-cols-1 row-cols-md-3 g-4  justify-content-md-center">
+                <div class="col" style="width: 200px;">
+                   
+                    <div class="card">
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    99+ 
+                        </span>
+                        <img src="MSD.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">MSD jersy</h5>
+                            <p class="card-text">RS 5000</p>
+                            <p class="card-text">This is a Legend Ms dhonis jersy</p>
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" style="width: 200px;">
+                    <div class="card">
+                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    99+ 
+                        </span>
+                        <img src="bat.jpg" class="card-img-top" alt="...">
+                        <div class="card-body" class="card border-primary mb-3" style="max-width: 18rem;">
+                            <h5 class="card-title">The cricket Bat</h5>
+                            <p class="card-text">Rs 1000</p>
+                            <p class="card-text">This is a best villow bat.</p>
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" style="width: 200px;">
+                    <div class="card">
+                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    99+ 
+                        </span>
+                        <img src="helmet.jpg" class="card-img-top" alt="...">
+                        <div class="card-body" class="card border-primary mb-3" style="max-width: 18rem;">
+                            <h5 class="card-title">Helmet</h5>
+                            <p class="card-text">Rs 900</p>
+                            <p class="card-text">This is a Helmet use to Potect head</p>
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" style="width: 200px;">
+                    <div class="card">
+                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    99+ 
+                        </span>
+                        <img src="cloves.jpg" class="card-img-top" alt="...">
+                        <div class="card-body" class="card border-primary mb-3" style="max-width: 18rem;">
+                            <h5 class="card-title">Cloves</h5>
+                            <p class="card-text">Rs 400</p>
+                            <p class="card-text">This is a cloves use to Potect hand</p>
+                            <a href="#" class="btn btn-primary">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" style="width: 200px;">
+                    <div class="card">  s
+                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    99+ 
+                        </span>
+                        <img src="bag.jpg" class="card-img-top" alt="..." class="border border-danger">
+                        <div class="card-body" class="card border-primary mb-3" style="max-width: 18rem;">
+                            <h5 class="card-title">Kit bag</h5>
+                            <p class="card-text">Rs 200</p>
+                            <p class="card-text">This is kit bag for accesaries</p>
+                            <a href="#" class="btn btn-primary">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+    <br><br>
+
+    <h1 class="d-flex justify-content-center">Contact</h1><br>
+    <div class="container" id="contact">
+        <div>
+            <div class="input-group">
+                <span class="input-group-text">First and last name</span>
+                <input type="text" aria-label="First name" class="form-control">
+                <input type="text" aria-label="Last name" class="form-control">
+            </div><br>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                <div class="mb-3"><br>
+                    <label for="exampleFormControlTextarea1" class="form-label">Address</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea><br>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label"> phone Number</label>
+                        <input type="Phone" class="form-control" placeholder="phone number">
+
+                        <br>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                            <button class="btn btn-primary    me-md-2" type="button">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>

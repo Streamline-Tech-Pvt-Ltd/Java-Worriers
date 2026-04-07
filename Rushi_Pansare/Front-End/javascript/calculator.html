@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calaculator</title>
+    <style>
+        .border {
+            height: 500px;
+            width: 400px;
+            background-color: rgb(0, 0, 0);
+            border-radius: 2%;
+            
+
+        }
+
+        input {
+            
+            color: rgb(138, 142, 145);
+            height: 80px;
+            width: 350px;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        button {
+            height: 50px;
+            width: 70px;
+            margin: 7px;
+            cursor: pointer;
+
+        }
+
+        .center,
+        .one,
+        .two,
+        .three,
+        .four {
+            margin-left: 20px;
+            ;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div class="border">
+        <input type="text"  ><br><br>
+        <div class="center">
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="deleteItem()">>DEL</button>
+            <button onclick="appendValue('/')">/</button>
+            <button onclick="appendValue ('*')">*</button>
+        </div>
+        <div class="one">
+            <button onclick="appendValue('7')">7</button>
+            <button onclick="appendValue('8')">8</button>
+            <button onclick="appendValue('9')">9</button>
+            <button onclick="appendValue()">-</button>
+        </div>
+        <div class="two">
+            <button onclick="appendValue()">4</button>
+            <button onclick="appendValue()">5</button>
+            <button onclick="appendValue()">6</button>
+            <button onclick="appendValue()">+</button>
+        </div>
+        <div class="three">
+            <button onclick="appendValue()">1</button>
+            <button onclick="appendValue()">2</button>
+            <button onclick="appendValue()">3</button>
+            <button onclick="appendValue()">%</button>
+        </div>
+        <div class="four">
+            <button onclick="appendValue()"> 0</button>
+            <button onclick="appendValue()">.</button>
+            <button onclick="equalItem()">=</button>
+
+        </div>
+    </div>
+
+
+
+        <script>
+            function appendValue(){
+            alert("button clicked");
+            }
+        </script>
+
+</body>
+</html>

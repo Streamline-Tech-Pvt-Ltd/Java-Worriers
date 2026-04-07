@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Transition</title>
+<style>
+div,.linear,.ease-in, .ease-out,.ease-in-out{
+background-color:red;
+width: 80px;
+height: 80px;
+transition-property-width;
+transition-duration: 1s;
+transition-timing-function:ease- in;
+transition-delay:2s:
+display:inline-block;
+justify-content:center;
+}
+
+div:hover{
+ 	width: 200px;
+	background-color: yellow;
+}
+.ease-out{
+transition-timing-function:ease-out;
+transition-delay:5s:
+transition-duration: 10s;
+
+}
+</style>
+</head>
+<body>
+<div class="linear">
+	linear
+</div><br>
+<div class="ease-in">
+	ease-in
+</div><br>
+<div class="ease-out">
+	ease-out
+</div><br>
+
+<div class="ease-in-out">
+	ease-in-out
+</div>
+
+</body>
+</html>
+

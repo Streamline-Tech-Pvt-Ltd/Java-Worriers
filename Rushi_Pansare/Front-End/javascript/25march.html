@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        //array
+        const cars = ["BMW", "VOLVO","DEFENDER"];
+       // cars.length = 2;          //proprty to finde how much print
+        console.log(cars);
+
+
+        const fruits = ["mango","banana","orange"];
+        let fruit = fruits.join(" * ");                 //seprater change karyla vapratajoin function
+        console.log(fruit);
+
+        const frut = ["apple", "grips","papaay"];   //last elemnt remove karto
+        frut.pop();
+        console.log(frut);
+
+         const fruti = ["apple", "grips","papaay"];  //last la element add karto
+        fruti.push("kiwi");
+        console.log(fruti);
+
+        const frutie = ["apple", "grips","papaay"]; // add elemnt at first
+        frutie.unshift("kiwi");
+        console.log(frutie);
+        
+        const fru = ["apple", "grips","papaay","banana"]; // sort array asending order
+        fru.sort();
+        console.log(fru);
+
+        const frutse = ["apple", "grips","papaay"]; // sort array reverse order
+        frutse.reverse();
+        console.log(frutse);
+
+        const frt = ["apple", "grips","papaay","banana"]; // sort array decending order;
+        frt.sort();
+        frt.reverse();
+        console.log(frt);
+
+
+
+//filter method
+        
+        const number = [45, 4, 16, 25];
+        const age = number.filter( myFunction);
+
+        function myFunction(value){
+            return value > 18;
+        }
+         console.log(age);
+
+
+         // spred operator
+         const arr1 = [1,2,3];
+         const arr2 = [4,5,6];
+         const arr3 = [...arr1,...arr2];
+         console.log(arr3);
+
+
+         //crating MAp
+
+         const fruitse = new Map();  //method first to create map
+         fruitse.set("apple", 500);
+         fruitse.set("bana", 400);
+         fruitse.set ("mango", 800);
+         console.log(fruitse);
+
+         const fruuts = new Map([     //method second to creta map
+            ["banan",22],
+            ["apple",79],
+            ["mango",80]
+         ]);
+         fruuts.set("kiwi",40);               //set value 
+         let value = fruuts.get("apple");    // get value
+         let values = fruuts.delete("mango");  // delet value means remove only one element
+         let val = fruuts.clear(fruuts);        // clear remove all elemnt from the array
+         console.log(fruuts);
+         console.log(fruuts);
+         console.log(value);
+
+         console.log(fruuts); 
+
+        // alert("welcome to javascript");
+
+          //let message = confirm("are you sure");
+          //console.log(message);                           //return true fallafter return the value
+         
+
+          let name = prompt("enter your name");
+          console.log(name);
+
+
+
+
+         
+
+
+
+
+    </script>
+</body>
+</html>
+

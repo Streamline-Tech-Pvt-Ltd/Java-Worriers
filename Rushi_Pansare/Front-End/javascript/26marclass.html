@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLASS</title>
+</head>
+
+<body>
+    <p>Finding html element by class name</p>
+    <p class="intro">hellow world</p>
+    <div class="intro">javascript</div>
+   
+    <p id="demo"></p>
+    <script>
+        const x = document.getElementsByClassName("intro");
+        document.getElementById("demo").innerHTML = "the first pargraph with class is :" + x[1].innerHTML;
+
+    </script>
+</body>
+
+</html>

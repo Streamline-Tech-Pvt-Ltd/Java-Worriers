@@ -1,0 +1,22 @@
+.container{
+background-color: skyblue;
+height:60px;
+display:flex;
+justify-content:space-between;
+align-item:center;
+padding:10px;
+position: fixed;
+top: 0;
+left: 0;
+width: 1260px;
+}
+
+.nav{
+list-style:none;				
+display:flex;
+
+
+}
+.nav li{
+margin-left: 80px;
+}

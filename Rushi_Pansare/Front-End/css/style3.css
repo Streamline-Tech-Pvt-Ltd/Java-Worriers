@@ -1,0 +1,23 @@
+table,th,td{
+border-style: double;
+border-collapse:collapse;
+margin-left:150px;
+border-color:red;
+font-family:Times New Roman;
+
+}
+
+th{
+font-size:25px;
+color:red;
+background-color:white;	
+}
+
+table{
+height:50%;
+width:50%;
+text-align:center;
+background-color:rgba(200,0,0,0.10);
+color:blue;
+}
+

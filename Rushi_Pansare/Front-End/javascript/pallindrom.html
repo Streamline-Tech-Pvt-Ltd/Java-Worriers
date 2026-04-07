@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pallindrom</title>
+</head>
+
+<body>
+    <script>
+        let num = 141;
+        let original = num;
+        let Temp = 0;
+
+        while (num > 0) {
+            let digit = num % 10;
+            Temp = Temp * 10 + digit;
+            num = num / 10;
+          
+        }
+
+        if (original === Temp) {
+            console.log("Palindrome number");
+        } else {
+            console.log("Not a palindrome");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+body {
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+}
+
+
+nav {
+    background-color: rgb(0, 0, 0);
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 20px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: yellow;
+}
+
+
+section {
+    padding: 50px;
+    text-align: center;
+}
+
+
+#home {
+    background-color: aquamarine;
+}
+
+#home img {
+    width: 150px;
+    border-radius: 50%;
+}
+
+#about {
+    background-color: papayawhip;
+}
+
+
+#skills {
+    background-color: paleturquoise;
+}
+
+#skills ul {
+    list-style: none;
+}
+
+#skills li {
+    padding: 8px;
+    font-size: 18px;
+}
+
+
+#contact {
+    background-color: greenyellow;
+}

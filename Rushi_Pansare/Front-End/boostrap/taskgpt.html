@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Page</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        /* Hover Effect */
+        .card {
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .badge-sale {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand text-warning" href="#">Cricket Techi</a>
+
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="text-center text-white" style="background:url('Cricket ground background.jpg') no-repeat center/cover; height:500px;">
+    <div class="d-flex flex-column justify-content-center align-items-center h-100">
+        <h1 class="bg-danger p-3">Big Sale – Up to 50% Off</h1>
+        <p>Get best cricket products at lowest prices</p>
+        <button class="btn btn-info">Shop Now</button>
+    </div>
+</section>
+
+<!-- Products -->
+<div class="container mt-5" id="products">
+    <h2 class="text-center mb-4">Products</h2>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        <!-- Card 1 -->
+        <div class="col">
+            <div class="card position-relative">
+                <span class="badge bg-danger badge-sale">Sale</span>
+                <img src="MSD.jpg" class="card-img-top">
+                <div class="card-body text-center">
+                    <h5>MSD Jersey</h5>
+                    <p>$5000</p>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col">
+            <div class="card position-relative">
+                <span class="badge bg-danger badge-sale">Sale</span>
+                <img src="bat.jpg" class="card-img-top">
+                <div class="card-body text-center">
+                    <h5>Cricket Bat</h5>
+                    <p>$1000</p>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col">
+            <div class="card position-relative">
+                <span class="badge bg-danger badge-sale">Sale</span>
+                <img src="helmet.jpg" class="card-img-top">
+                <div class="card-body text-center">
+                    <h5>Helmet</h5>
+                    <p>$900</p>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col">
+            <div class="card position-relative">
+                <span class="badge bg-danger badge-sale">Sale</span>
+                <img src="cloves.jpg" class="card-img-top">
+                <div class="card-body text-center">
+                    <h5>Gloves</h5>
+                    <p>$400</p>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="col">
+            <div class="card position-relative">
+                <span class="badge bg-danger badge-sale">Sale</span>
+                <img src="bag.jpg" class="card-img-top">
+                <div class="card-body text-center">
+                    <h5>Kit Bag</h5>
+                    <p>$200</p>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Contact Form -->
+<div class="container mt-5" id="contact">
+    <h2 class="text-center mb-4">Contact</h2>
+
+    <form>
+        <input type="text" class="form-control mb-3" placeholder="Name">
+        <input type="email" class="form-control mb-3" placeholder="Email">
+        <textarea class="form-control mb-3" placeholder="Address"></textarea>
+        <input type="text" class="form-control mb-3" placeholder="Mobile">
+
+        <div class="text-center">
+            <button class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

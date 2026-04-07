@@ -1,0 +1,13 @@
+table,th,td{
+border-collapse:collapse;
+border:2px solid black;
+text-align:center;
+
+}
+tr:nth-child(even){
+background-color:yellow;
+}
+
+td:nth-child(even),th:nth-child(even){
+background-color: blue;
+}
