@@ -1,0 +1,225 @@
+1#NOT NULL on CREATE TABLE
+
+The following SQL ensures that the "ID", "LastName", and "FirstName" columns will NOT accept NULL values when the "student5" table is created:
+
+mysql> use student;
+Database changed
+mysql> CREATE TABLE student5 (
+    ->     ID int NOT NULL,
+    ->     LastName varchar(255) NOT NULL,
+    ->     FirstName varchar(255) NOT NULL,
+    ->     Age int
+    -> );
+Query OK, 0 rows affected (0.15 sec)
+
+mysql> insert into student5 values(1,"  ","om",22);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into student5 values(2," xyz" ,"sai",22);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from student5;
++----+----------+-----------+------+
+| ID | LastName | FirstName | Age  |
++----+----------+-----------+------+
+|  1 |          | om        |   22 |
+|  2 |  xyz     | sai       |   22 |
++----+----------+-----------+------+
+2 rows in set (0.02 sec)
+
+
+2#Unique constraint 
+The unique constraint is define that all value of the table are different from other
+mysql> CREATE TABLE student6(    ID int NOT NULL,
+    ->     LastName varchar(255) NOT NULL,
+    ->     FirstName varchar(255),
+    ->     Age int,
+    ->     UNIQUE (ID)
+    -> );
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> insert into student6 values(1,"raut","sai",22);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into student6 values(1,"raut","sai",22);
+ERROR 1062 (23000): Duplicate entry '1' for key 'student6.ID'
+mysql> insert into student6 values(2,"raut","sai",22);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into student6 values(3,"xyz","sai",22);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from student6;
++----+----------+-----------+------+
+| ID | LastName | FirstName | Age  |
++----+----------+-----------+------+
+|  1 | raut     | sai       |   22 |
+|  2 | raut     | sai       |   22 |
+|  3 | xyz      | sai       |   22 |
++----+----------+-----------+------+
+3 rows in set (0.01 sec)
+
+3# Primary key
+The PRIMARY KEY constraint uniquely identifies each record in a table.
+Primary keys must contain UNIQUE values, and cannot contain NULL values.
+A table can have only ONE primary key; and in the table, this primary key can consist of single or multiple columns (fields).
+
+mysql> create table student7(id_no int primary key,name varchar(10),age int);
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> insert into student7 values(1,"om",22);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into student7 values(1,"om",22);
+ERROR 1062 (23000): Duplicate entry '1' for key 'student7.PRIMARY'
+mysql> insert into student7 values(2,"sai",22);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from student7;
++-------+------+------+
+| id_no | name | age  |
++-------+------+------+
+|     1 |        om |   22 |
+|     2 |        sai  |   22 |
++-------+------+------+
+2 rows in set (0.00 sec)
+
+4#default
+The DEFAULT constraint is used to set a default value for a column.
+
+The default value will be added to all new records, if no other value is specified.
+mysql> CREATE TABLE student8(
+    ->     ID int NOT NULL,
+    ->     LastName varchar(255) NOT NULL,
+    ->     FirstName varchar(255),
+    ->     Age int,
+    ->     City varchar(255) DEFAULT 'pune'
+    -> );
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> insert into student8 values(1,"shende","pramod",22);
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> insert into student8(ID,LastNAme,Firstname,Age) values(1,"shende","pramod",22);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into student8(ID,LastNAme,Firstname,Age) values(2,"raut","prnav",22);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from student8;
++----+----------+-----------+------+------+
+| ID | LastName | FirstName | Age  | City |
++----+----------+-----------+------+------+
+|  1 | shende   | pramod    |   22 | pune |
+|  2 | raut     | prnav     |   22 | pune |
++----+----------+-----------+------+------+
+2 rows in set (0.00 sec)
+
+5#check constraint
+
+The check the specific condition on given in the check(  );
+mysql> CREATE TABLE student9 (
+    ->     ID int NOT NULL,
+    ->     LastName varchar(255) NOT NULL,
+    ->     FirstName varchar(255),
+    ->     Age int,
+    ->     CHECK (Age>=18)
+    -> );
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> insert into student9 values(1,"raut","sai",22);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into student9 values(1,"raut","sai",17);
+ERROR 3819 (HY000): Check constraint 'student9_chk_1' is violated.
+mysql> insert into student9 values(1,"raut","sai",18);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from student9 ;
++----+----------+-----------+------+
+| ID | LastName | FirstName | Age  |
++----+----------+-----------+------+
+|  1 | raut     | sai       |   22 |
+|  1 | raut     | sai       |   18 |
++----+----------+-----------+------+
+2 rows in set (0.01 sec)
+
+6#Forign key
+
+The FOREIGN KEY constraint is used to prevent actions that would destroy links between tables.
+A FOREIGN KEY is a field (or collection of fields) in one table, that refers to the PRIMARY KEY in another table.
+The table with the foreign key is called the child table, and the table with the primary key is called the referenced or parent table.
+
+ create table department(dept_id int primary key, d_name varchar(20));
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> insert into department values(1,java);
+ERROR 1054 (42S22): Unknown column 'java' in 'field list'
+mysql> insert into department values(1,"java");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into department values(2,"python");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into department values(3,"DA");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from department;
++---------+--------+
+| dept_id | d_name |
++---------+--------+
+|       1 | java   |
+|       2 | python |
+|       3 | DA     |
++---------+--------+
+3 rows in set (0.00 sec)
+
+mysql> CREATE TABLE employees (
+    ->          emp_id INT,
+    ->  emp_name varchar(20),
+    ->         E_role VARCHAR(20),
+    ->          salary FLOAT,
+    ->         dept_id INT,
+    ->          FOREIGN KEY (dept_id) REFERENCES department(dept_id)
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 7
+mysql> CREATE TABLE employees (
+    ->          emp_id INT,
+    ->  emp_name varchar(20),
+    ->         E_role VARCHAR(20),
+    ->          salary FLOAT,
+    ->         dept_id INT,
+    ->          FOREIGN KEY (dept_id) REFERENCES department(dept_id));
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> insert into employees values(101,"rushi","java devloper",40000,1);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into employees values(102,"aditya","java devloper",40000,1);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into employees values(103,"pramod","python devloper",40000,2);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into employees values(104,"om","DA ",40000,3);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from department;
++---------+--------+
+| dept_id | d_name |
++---------+--------+
+|       1 | java   |
+|       2 | python |
+|       3 | DA     |
++---------+--------+
+3 rows in set (0.00 sec)
+
+mysql> select * from employees;
++--------+----------+-----------------+--------+---------+
+| emp_id | emp_name | E_role          | salary | dept_id |
++--------+----------+-----------------+--------+---------+
+|    101 | rushi    | java devloper   |  40000 |       1 |
+|    102 | aditya   | java devloper   |  40000 |       1 |
+|    103 | pramod   | python devloper |  40000 |       2 |
+|    104 | om       | DA              |  40000 |       3 |
++--------+----------+-----------------+--------+---------+
+4 rows in set (0.00 sec)
