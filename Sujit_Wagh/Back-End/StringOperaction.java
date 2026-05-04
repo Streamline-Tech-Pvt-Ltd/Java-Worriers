@@ -15,7 +15,7 @@ public class StringOperaction {
 	System.out.println(s1.length());
 	System.out.println(s2.length());
 	
-	System.out.println("**String Concent **");
+	System.out.println("**String Concat **");
 	System.out.println(s1.concat(s2));
 	
 	System.out.println("** String Equals **");
