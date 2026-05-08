@@ -8,7 +8,7 @@ public class Case1 {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter the first digit");
 		int digit1 = sc.nextInt();
-		System.out.println("Enter the charcter + - * / %");
+		System.out.println("Enter the operator + - * / %");
 		char operators = sc.next().charAt(0);
 		System.out.println("Enter the second digit");
 		int digit2 =sc.nextInt();
