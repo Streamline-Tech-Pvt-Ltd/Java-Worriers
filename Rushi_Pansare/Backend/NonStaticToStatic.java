@@ -1,3 +1,4 @@
+
 package rushi.main.demo;
 
 public class NonStaticToStatic {
