@@ -1,0 +1,80 @@
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| employee           |
+| information_schema |
+| mysql              |
+| performance_schema |
+| student            |
+| sys                |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> use student;
+Database changed
+mysql> show tables;
++-------------------+
+| Tables_in_student |
++-------------------+
+| sales             |
+| sales_info        |
+| stu               |
+| stu_info          |
++-------------------+
+4 rows in set (0.00 sec)
+
+mysql> drop view sales_info;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> create view sales_info as select* from sales limit 1,1;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> select * from sales_info;
++------+---------+--------+
+| year | country | amount |
++------+---------+--------+
+| 2025 | usa     |   1500 |
++------+---------+--------+
+1 row in set (0.00 sec)
+
+mysql> select * from stu;
++----+-------+---------+-------+
+| id | name  | address | fees  |
++----+-------+---------+-------+
+|  1 | sujit | newasa  | 45000 |
+|  2 | ram   | pune    | 54000 |
+|  3 | sahil | nodia   | 21000 |
+|  4 |       | delhi   | 78000 |
++----+-------+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> select id,name,address,sum(fees) as total_fess from stu group by id,name,address having sum(fees)>21000;
++----+-------+---------+------------+
+| id | name  | address | total_fess |
++----+-------+---------+------------+
+|  1 | sujit | newasa  |      45000 |
+|  2 | ram   | pune    |      54000 |
+|  4 |       | delhi   |      78000 |
++----+-------+---------+------------+
+3 rows in set (0.00 sec)
+
+mysql> select id,name,address,sum(fees) as total_fees from stu group by id,name,address with rollup;
++------+-------+---------+------------+
+| id   | name  | address | total_fees |
++------+-------+---------+------------+
+|    1 | sujit | newasa  |      45000 |
+|    1 | sujit | NULL    |      45000 |
+|    1 | NULL  | NULL    |      45000 |
+|    2 | ram   | pune    |      54000 |
+|    2 | ram   | NULL    |      54000 |
+|    2 | NULL  | NULL    |      54000 |
+|    3 | sahil | nodia   |      21000 |
+|    3 | sahil | NULL    |      21000 |
+|    3 | NULL  | NULL    |      21000 |
+|    4 |       | delhi   |      78000 |
+|    4 |       | NULL    |      78000 |
+|    4 | NULL  | NULL    |      78000 |
+| NULL | NULL  | NULL    |     198000 |
++------+-------+---------+------------+
+13 rows in set (0.00 sec)
