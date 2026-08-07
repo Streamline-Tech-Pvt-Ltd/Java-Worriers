@@ -1,0 +1,126 @@
+:root {
+    --gold: #cda45e;
+    --dark-blue-grey: #1e242b;
+    --mid-grey: #272e38;
+    --light-grey-bg: #f8f9fa;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333333;
+}
+
+/* Custom Typography Helpers */
+.fw-serif {
+    font-family: 'Playfair Display', serif;
+}
+.tracking-widest {
+    letter-spacing: 2px;
+}
+.text-primary-gold {
+    color: var(--gold) !important;
+}
+.bg-dark-custom {
+    background-color: var(--dark-blue-grey) !important;
+}
+.bg-light-custom {
+    background-color: var(--light-grey-bg) !important;
+}
+.bg-newsletter {
+    background-color: var(--mid-grey) !important;
+}
+.lead-custom {
+    font-size: 13.5px !important;
+    line-height: 1.7;
+}
+
+/* Top bar style */
+.top-bar {
+    background-color: var(--dark-blue-grey);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Button override */
+.btn-gold {
+    background-color: var(--gold);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+.btn-gold:hover {
+    background-color: #bfa167;
+    color: #ffffff;
+}
+
+/* Navbar overrides */
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+.navbar .nav-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333333;
+}
+.navbar .nav-link:hover, .navbar .nav-link.active {
+    color: var(--gold) !important;
+}
+
+/* Hero Section */
+.hero-banner {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://unsplash.com') no-repeat center center/cover;
+    height: 320px;
+}
+.hero-banner h1 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Rooms Card UI elements */
+.room-img {
+    height: 280px;
+    background-size: cover;
+    background-position: center;
+}
+.room-card p {
+    font-size: 13px;
+    line-height: 1.6;
+}
+.book-now-link {
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.book-now-link:hover {
+    color: var(--gold) !important;
+}
+
+/* Info Elements inside form block */
+.icon-circle {
+    width: 44px;
+    height: 44px;
+    background-color: rgba(205, 164, 94, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+.form-content::placeholder {
+    color: #b5b5b5;
+    font-size: 14px;
+}
+.form-content:focus {
+    border-color: var(--gold);
+    box-shadow: none;
+}
+
+/* Footer Hover effects */
+footer a:hover {
+    color: var(--gold) !important;
+}
