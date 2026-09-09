@@ -1,0 +1,690 @@
+Q1.What is oop in java and 4 pillers and ex?
+OOP (Object-Oriented Programming) is a programming paradigm that organizes software around objects rather than functions. An object represents a real-world entity and contains:
+
+State (Data) → Variables (Fields)
+Behavior (Actions) → Methods
+class Car {
+    String brand = "Toyota";   // State (Data)
+
+    void start() {             // Behavior (Method)
+        System.out.println("Car Started");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car c = new Car();     // Object Creation
+        System.out.println(c.brand);
+        c.start();
+    }
+}
+1. Encapsulation (Data Hiding)
+Definition
+
+Encapsulation means wrapping data (variables) and methods into a single unit (class) and restricting direct access to data using private variables.
+
+Example
+class Student {
+    private int id;
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s = new Student();
+
+        s.setId(101);
+        System.out.println(s.getId());
+    }
+}
+2. Inheritance (Code Reusability)
+Definition
+
+Inheritance allows one class to inherit properties and methods from another class.
+
+Keyword: extends
+
+Example
+class Animal {
+    void sound() {
+        System.out.println("Animal makes sound");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+
+        d.sound();
+        d.bark();
+    }
+}
+3. Polymorphism (Many Forms)
+Definition
+
+Polymorphism means one method can perform different tasks depending on how it is used.
+
+There are two types:
+
+A. Method Overloading (Compile-Time Polymorphism)
+class Calculator {
+
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Calculator c = new Calculator();
+
+        System.out.println(c.add(10, 20));
+        System.out.println(c.add(10, 20, 30));
+    }
+}
+B. Method Overriding (Run-Time Polymorphism)
+class Animal {
+    void sound() {
+        System.out.println("Animal Sound");
+    }
+}
+
+class Dog extends Animal {
+
+    @Override
+    void sound() {
+        System.out.println("Dog Barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal a = new Dog();
+        a.sound();
+    }
+}
+4. Abstraction (Hiding Implementation)
+Definition
+
+Abstraction means showing only essential details and hiding the internal implementation.
+
+It is achieved using:
+
+Abstract class
+Interface
+Example using Abstract Class
+abstract class Vehicle {
+
+    abstract void start();
+
+    void stop() {
+        System.out.println("Vehicle Stopped");
+    }
+}
+
+class Bike extends Vehicle {
+
+    @Override
+    void start() {
+        System.out.println("Bike Started");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Bike b = new Bike();
+
+        b.start();
+        b.stop();
+    }
+}
+Example using Interface
+interface Animal {
+    void sound();
+}
+
+class Cat implements Animal {
+
+    @Override
+    public void sound() {
+        System.out.println("Cat Meows");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal a = new Cat();
+        a.sound();
+    }
+}
+Q 2.What is class and object with ex?
+1. What is a Class?
+
+A class is a blueprint (template) used to create objects. It defines the properties (variables) and behaviors (methods) that objects will have.
+
+Definition (Interview Answer)
+
+A class is a user-defined data type that acts as a blueprint for creating objects. It contains fields (variables), methods, constructors, and blocks.
+
+Syntax
+class ClassName {
+    // Variables
+    // Methods
+}
+Example
+class Student {
+    int id;
+    String name;
+
+    void display() {
+        System.out.println(id + " " + name);
+    }
+}
+2. What is an Object?
+
+An object is a real-world entity and an instance of a class. It occupies memory and can access the variables and methods of the class.
+
+Definition (Interview Answer)
+
+An object is an instance of a class that has state (data) and behavior (methods).
+
+Syntax
+ClassName objectName = new ClassName();
+
+Example:
+
+Student s1 = new Student();
+
+Here:
+
+Student → Class
+s1 → Object (Reference Variable)
+new → Allocates memory and creates the object
+Student() → Calls the constructor
+Complete Example
+class Student {
+
+    int id;
+    String name;
+
+    void display() {
+        System.out.println("ID : " + id);
+        System.out.println("Name : " + name);
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Student s1 = new Student();
+
+        s1.id = 101;
+        s1.name = "Rahul";
+
+        s1.display();
+    }
+}
+Q3 . What is constractor and type of constructor
+What is a Constructor in Java?
+
+A constructor is a special method that is automatically called when an object is created. It is mainly used to initialize the object's data (instance variables).
+Types of Constructors in Java
+
+There are two main types of constructors:
+
+Default (No-Argument) Constructor
+Parameterized Constructor
+1. Default (No-Argument) Constructor
+
+A constructor that does not take any parameters.
+
+Example
+class Student {
+
+    Student() {
+        System.out.println("Default Constructor Called");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Student s1 = new Student();
+    }
+}
+Output
+Default Constructor Called
+2. Parameterized Constructor
+
+A constructor that accepts one or more parameters to initialize the object's data.
+
+Example
+class Student {
+
+    int id;
+    String name;
+
+    Student(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    void display() {
+        System.out.println(id + " " + name);
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Student s1 = new Student(101, "Rahul");
+
+        s1.display();
+    }
+}
+Output
+101 Rahul
+Constructor Overloading
+
+A class can have multiple constructors with different parameter lists.
+
+Example
+class Student {
+
+    Student() {
+        System.out.println("Default Constructor");
+    }
+
+    Student(int id) {
+        System.out.println("ID = " + id);
+    }
+
+    Student(int id, String name) {
+        System.out.println(id + " " + name);
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        new Student();
+        new Student(101);
+        new Student(101, "Rahul");
+    }
+}
+Output
+Default Constructor
+ID = 101
+101 Rahul
+Constructor vs Method
+Constructor	Method
+Same name as the class	Can have any valid name
+No return type	Must have a return type (or void)
+Called automatically when an object is created	Called explicitly by the programmer
+Used to initialize objects	Used to perform operations
+Real-Life Example
+
+Think of buying a mobile phone:
+
+Class: Mobile
+Constructor: Sets the brand and model when the phone is created.
+Object: Your specific phone.
+class Mobile {
+
+    String brand;
+
+    Mobile(String brand) {
+        this.brand = brand;
+    }
+
+    void show() {
+        System.out.println("Brand: " + brand);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Mobile m = new Mobile("Samsung");
+        m.show();
+    }
+}
+Q 4. What is Method?
+A method is a block of code that performs a specific task. It is executed only when it is called (invoked). Methods help make programs reusable, readable, and easier to maintain.
+
+Definition (Interview Answer)
+
+A method is a block of code that performs a specific task. It is defined inside a class and is called whenever its functionality is needed.
+
+Syntax
+accessModifier returnType methodName(parameters) {
+    // Method body
+}
+Example
+class Student {
+
+    void display() {
+        System.out.println("Welcome to Java");
+    }
+
+    public static void main(String[] args) {
+
+        Student s = new Student();
+        s.display();
+    }
+}
+Q 5.Differece between constructor & method
+| **Constructor**                                                        | **Method**                                                                                  |
+| ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| A constructor is used to **initialize an object**.                     | A method is used to **perform a specific task or operation**.                               |
+| It has the **same name as the class**.                                 | It can have **any valid name**.                                                             |
+| It **does not have a return type** (not even `void`).                  | It **must have a return type** or `void`.                                                   |
+| It is **called automatically** when an object is created using `new`.  | It is **called explicitly** by the programmer.                                              |
+| It is executed **only once per object creation**.                      | It can be called **multiple times**.                                                        |
+| It **cannot be inherited**.                                            | It **can be inherited** (unless it is `private`, `static`, or `final` in certain contexts). |
+| It **can be overloaded**.                                              | It **can be overloaded and overridden**.                                                    |
+| If no constructor is written, Java provides a **default constructor**. | Java does **not** create methods automatically.                                             |
+Q 6.what is this keyword
+The this keyword is a reference variable that refers to the current object of the class.
+
+Interview Definition
+
+this is a reference variable in Java that refers to the current object of the class. It is used to access the current object's variables, methods, and constructors.
+
+Why do we use this?
+
+We use this to:
+
+Differentiate instance variables from local variables.
+Call the current class methods.
+Call another constructor of the same class.
+Pass the current object as an argument.
+Return the current object.
+1. this to Refer to Current Class Instance Variables
+
+When local variables and instance variables have the same name, use this.
+
+Example
+class Student {
+
+    int id;
+    String name;
+
+    Student(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    void display() {
+        System.out.println(id + " " + name);
+    }
+
+    public static void main(String[] args) {
+        Student s = new Student(101, "Rahul");
+        s.display();
+    }
+}
+Q 7. Static Keyword?
+The static keyword is used to create class-level members (variables, methods, blocks, and nested classes). A static member belongs to the class itself, not to individual objects.
+
+Interview Definition
+
+The static keyword is used to declare class-level variables and methods. Static members belong to the class rather than objects, so they can be accessed without creating an object.
+
+Why Do We Use static?
+To share common data among all objects.
+To reduce memory usage (only one copy exists).
+To access members without creating an object.
+1. Static Variable
+
+A static variable is shared by all objects of the class.
+
+Example
+class Student {
+
+    int id;
+    String name;
+    static String college = "ABC College";
+
+    Student(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    void display() {
+        System.out.println(id + " " + name + " " + college);
+    }
+
+    public static void main(String[] args) {
+        Student s1 = new Student(101, "Rahul");
+        Student s2 = new Student(102, "Priya");
+
+        s1.display();
+        s2.display();
+    }
+}
+
+
+A static method belongs to the class and can be called without creating an object.
+
+Example
+class Demo {
+
+    static void show() {
+        System.out.println("Static Method");
+    }
+
+    public static void main(String[] args) {
+        Demo.show();
+    }
+}
+Q 8.Final Keyword
+The final keyword is used to restrict modification. It can be applied to:
+
+Variable
+Method
+Class
+Interview Definition
+
+The final keyword is a non-access modifier used to restrict changes. A final variable cannot be reassigned, a final method cannot be overridden, and a final class cannot be inherited.
+
+1. Final Variable
+
+A final variable can be assigned only once.
+
+Example
+class Demo {
+    final int x = 10;
+
+    void display() {
+        // x = 20;   // Compile-time Error
+        System.out.println(x);
+    }
+
+    public static void main(String[] args) {
+        Demo d = new Demo();
+        d.display();
+    }
+}
+Output
+10
+
+Explanation:
+
+x is declared as final.
+Once assigned (10), it cannot be changed.
+2. Final Method
+
+A final method cannot be overridden by a subclass.
+
+Example
+class Animal {
+
+    final void sound() {
+        System.out.println("Animal Sound");
+    }
+}
+
+class Dog extends Animal {
+
+    // void sound() { }   // Compile-time Error
+}
+
+Explanation:
+
+The sound() method is final.
+The Dog class cannot override it.
+3. Final Class
+
+A final class cannot be extended (inherited).
+
+Example
+final class Animal {
+}
+
+// class Dog extends Animal { }   // Compile-time Error
+Q 9.Can we use final keyword to the constractor?
+A constructor is not inherited by subclasses. The purpose of final is to prevent overriding or inheritance, but constructors cannot be overridden, so marking them final is meaningless.
+
+Example (Invalid)
+class Student {
+
+    final Student() {    // Compile-time Error
+        System.out.println("Constructor");
+    }
+}
+
+Compile-time Error:
+
+modifier final not allowed here
+Why is final not allowed?
+Constructors are called only when an object is created.
+Constructors are not inherited.
+Constructors cannot be overridden.
+Therefore, final is not applicable to constructors.
+Q 10. What is Inheritance?
+Inheritance is an OOP (Object-Oriented Programming) concept in which one class acquires the properties (variables) and behaviors (methods) of another class.
+
+It helps in code reusability and establishes an "IS-A" relationship between classes.
+
+Interview Definition
+
+Inheritance is the process by which one class acquires the properties and methods of another class. It is achieved using the extends keyword.
+
+Syntax
+class Parent {
+    // Variables and methods
+}
+
+class Child extends Parent {
+    // Additional variables and methods
+}
+Parent (Superclass): The class whose members are inherited.
+Child (Subclass): The class that inherits from the parent.
+Example
+class Animal {
+
+    void sound() {
+        System.out.println("Animal makes sound");
+    }
+}
+
+class Dog extends Animal {
+
+    void bark() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Dog d = new Dog();
+
+        d.sound(); // Inherited method
+        d.bark();  // Child class method
+    }
+}
+Output
+Animal makes sound
+Dog barks
+Why Do We Use Inheritance?
+✅ Code Reusability
+✅ Reduces Code Duplication
+✅ Easier Maintenance
+✅ Supports Method Overriding (Runtime Polymorphism)
+Types of Inheritance in Java
+1. Single Inheritance
+
+One child class inherits from one parent class.
+
+Animal
+   |
+  Dog
+2. Multilevel Inheritance
+
+A class inherits from another class, which itself inherits from another class.
+
+Animal
+   |
+ Mammal
+   |
+  Dog
+3. Hierarchical Inheritance
+
+Multiple child classes inherit from the same parent class.
+
+      Animal
+      /    \
+    Dog    Cat
+4. Multiple Inheritance (Not Supported with Classes)
+
+Java does not support multiple inheritance using classes because it can lead to ambiguity (the Diamond Problem).
+
+  A
+ / \
+B   C
+ \ /
+  D
+
+However, Java supports multiple inheritance through interfaces.
+
+5. Hybrid Inheritance
+
+Hybrid inheritance is a combination of two or more inheritance types.
+
+❌ Not supported using classes.
+✅ Possible using interfaces.
+extends Keyword
+
+The extends keyword is used to inherit one class from another.
+
+Example:
+
+class Animal {
+}
+
+class Dog extends Animal {
+}
+
+

@@ -1,0 +1,191 @@
+Types of Inheritance in Java (Simple Explanation)
+
+Inheritance is an OOP concept in which one class acquires the properties and methods of another class using the extends keyword.
+
+Syntax
+class Parent {
+    // properties and methods
+}
+
+class Child extends Parent {
+    // inherits Parent class
+}
+1) Single Inheritance
+
+One child class inherits from one parent class.
+
+Diagram
+Parent
+   |
+ Child
+Example
+class Animal {
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog is barking");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.eat();
+        d.bark();
+    }
+}
+Output
+Animal is eating
+Dog is barking
+2) Multilevel Inheritance
+
+A class inherits from another class, and then another class inherits from it.
+
+Diagram
+GrandParent
+      |
+    Parent
+      |
+    Child
+Example
+class Animal {
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog is barking");
+    }
+}
+
+class Puppy extends Dog {
+    void weep() {
+        System.out.println("Puppy is weeping");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Puppy p = new Puppy();
+        p.eat();
+        p.bark();
+        p.weep();
+    }
+}
+Output
+Animal is eating
+Dog is barking
+Puppy is weeping
+3) Hierarchical Inheritance
+
+Multiple child classes inherit from the same parent class.
+
+Diagram
+      Animal
+      /    \
+    Dog    Cat
+Example
+class Animal {
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog is barking");
+    }
+}
+
+class Cat extends Animal {
+    void meow() {
+        System.out.println("Cat is meowing");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.eat();
+        d.bark();
+
+        Cat c = new Cat();
+        c.eat();
+        c.meow();
+    }
+}
+Output
+Animal is eating
+Dog is barking
+Animal is eating
+Cat is meowing
+4) Multiple Inheritance
+
+A child class inherits from more than one parent class.
+
+Diagram
+ Parent1     Parent2
+      \      /
+       \    /
+        Child
+In Java
+
+❌ Java does not support multiple inheritance with classes because it can create ambiguity (Diamond Problem).
+
+However, Java supports multiple inheritance using interfaces.
+
+Example:
+
+interface A {
+    void show();
+}
+
+interface B {
+    void display();
+}
+
+class Test implements A, B {
+    public void show() {
+        System.out.println("Show");
+    }
+
+    public void display() {
+        System.out.println("Display");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Test t = new Test();
+        t.show();
+        t.display();
+    }
+}
+5) Hybrid Inheritance
+
+Hybrid inheritance is a combination of two or more types of inheritance.
+
+Diagram
+        Animal
+       /      \
+     Dog      Cat
+        \    /
+       Puppy
+In Java
+
+❌ Hybrid inheritance is not supported with classes because it would require multiple inheritance.
+
+
+2)Difference Between this and super in Java
+this																super
+Refers to the current class object.									Refers to the parent (super) class object.
+Used to access current class variables, methods, and constructors.			Used to access parent class variables, methods, and constructors.
+Calls the current class constructor using this().							Calls the parent class constructor using super().
+Used when current class variables are hidden by local variables.			Used when parent class members are hidden by child class members.
+Can call another constructor of the same class.							Can call the constructor of the parent class.

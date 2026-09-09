@@ -1,0 +1,237 @@
+mysql> use employee;
+Database changed
+mysql> create table person(id int primary key,name varchar(100), mno varchar(10) unique);
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> desc person;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| id    | int          | NO   | PRI | NULL    |       |
+| name  | varchar(100) | YES  |     | NULL    |       |
+| mno   | varchar(10)  | YES  | UNI | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> insert into person values(1,'ram',123),(2,'anjli',4561),(3,'sham',7989);
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from person;
++----+-------+------+
+| id | name  | mno  |
++----+-------+------+
+|  1 | ram   | 123  |
+|  2 | anjli | 4561 |
+|  3 | sham  | 7989 |
++----+-------+------+
+3 rows in set (0.00 sec)
+
+mysql> insert into person values(4,'rahul',123);
+ERROR 1062 (23000): Duplicate entry '123' for key 'person.mno'
+mysql> create table person1(id int primary key , name varchar(100) , mno varchar(100) check(length(mno)>=10));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> desc person1;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| id    | int          | NO   | PRI | NULL    |       |
+| name  | varchar(100) | YES  |     | NULL    |       |
+| mno   | varchar(100) | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> insert into person1(1,'sham',7894561234),(2,'rahul',7894512365);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1,'sham',7894561234),(2,'rahul',7894512365)' at line 1
+mysql> insert into person1 values(1,'sham',7894561234),(2,'rahul',7894512365);
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from person1;
++----+-------+------------+
+| id | name  | mno        |
++----+-------+------------+
+|  1 | sham  | 7894561234 |
+|  2 | rahul | 7894512365 |
++----+-------+------------+
+2 rows in set (0.00 sec)
+
+mysql> insert into person1 values(3,'shub',456123);
+ERROR 3819 (HY000): Check constraint 'person1_chk_1' is violated.
+mysql> select * from person;
++----+-------+------+
+| id | name  | mno  |
++----+-------+------+
+|  1 | ram   | 123  |
+|  2 | anjli | 4561 |
+|  3 | sham  | 7989 |
++----+-------+------+
+3 rows in set (0.00 sec)
+
+mysql> select * from person1;
++----+-------+------------+
+| id | name  | mno        |
++----+-------+------------+
+|  1 | sham  | 7894561234 |
+|  2 | rahul | 7894512365 |
++----+-------+------------+
+2 rows in set (0.00 sec)
+
+mysql> create table person2(id int primary key, name varchar(100), mno varchar(100) constraint inter_the_ten_digit check(length(mno)=10));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> insert into person2 values(1,'sham',7894561235);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from person2;
++----+------+------------+
+| id | name | mno        |
++----+------+------------+
+|  1 | sham | 7894561235 |
++----+------+------------+
+1 row in set (0.00 sec)
+
+mysql> insert into person2 values(2,'ram',789);
+ERROR 3819 (HY000): Check constraint 'inter_the_ten_digit' is violated.
+mysql> alter table person add column user_email varchar(100);
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc person;
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| id         | int          | NO   | PRI | NULL    |       |
+| name       | varchar(100) | YES  |     | NULL    |       |
+| mno        | varchar(10)  | YES  | UNI | NULL    |       |
+| user_email | varchar(100) | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> insert into person values(4,'sujit',7894561237,'sujit532@gmail.com');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from person;
++----+-------+------------+--------------------+
+| id | name  | mno        | user_email         |
++----+-------+------------+--------------------+
+|  1 | ram   | 123        | NULL               |
+|  2 | anjli | 4561       | NULL               |
+|  3 | sham  | 7989       | NULL               |
+|  4 | sujit | 7894561237 | sujit532@gmail.com |
++----+-------+------------+--------------------+
+4 rows in set (0.00 sec)
+
+mysql> alter table person rename column user_email to email;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc person;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| id    | int          | NO   | PRI | NULL    |       |
+| name  | varchar(100) | YES  |     | NULL    |       |
+| mno   | varchar(10)  | YES  | UNI | NULL    |       |
+| email | varchar(100) | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> alter table person column modify email varchar(50);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'column modify email varchar(50)' at line 1
+mysql> alter table person  modify email varchar(50);
+Query OK, 4 rows affected (0.08 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> desc person;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| id    | int          | NO   | PRI | NULL    |       |
+| name  | varchar(100) | YES  |     | NULL    |       |
+| mno   | varchar(10)  | YES  | UNI | NULL    |       |
+| email | varchar(50)  | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> create table dep(d_id int primary key, d_name varchar(100));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> insert into dep values(1,'hr'),(2,'manager');
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from dep;
++------+---------+
+| d_id | d_name  |
++------+---------+
+|    1 | hr      |
+|    2 | manager |
++------+---------+
+2 rows in set (0.00 sec)
+
+mysql> create table employee(e_id int primary key , e_name varchar(100), d_id int, foregin key(d_id) references dep(d_id));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'key(d_id) references dep(d_id))' at line 1
+mysql> create table employee(e_id int primary key , e_name varchar(100), d_id int, foregin key(d_id) references dep(d_id));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'key(d_id) references dep(d_id))' at line 1
+mysql> create table employee(e_id int primary key , e_name varchar(100), d_id int, foreign key(d_id) references dep(d_id));
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> insert into employee values(1,'sujit',1),(2,'sahil',2);
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from employee;
++------+--------+------+
+| e_id | e_name | d_id |
++------+--------+------+
+|    1 | sujit  |    1 |
+|    2 | sahil  |    2 |
++------+--------+------+
+2 rows in set (0.00 sec)
+
+mysql> select * from person , employee;
++----+-------+------------+--------------------+------+--------+------+
+| id | name  | mno        | email              | e_id | e_name | d_id |
++----+-------+------------+--------------------+------+--------+------+
+|  1 | ram   | 123        | NULL               |    2 | sahil  |    2 |
+|  1 | ram   | 123        | NULL               |    1 | sujit  |    1 |
+|  2 | anjli | 4561       | NULL               |    2 | sahil  |    2 |
+|  2 | anjli | 4561       | NULL               |    1 | sujit  |    1 |
+|  3 | sham  | 7989       | NULL               |    2 | sahil  |    2 |
+|  3 | sham  | 7989       | NULL               |    1 | sujit  |    1 |
+|  4 | sujit | 7894561237 | sujit532@gmail.com |    2 | sahil  |    2 |
+|  4 | sujit | 7894561237 | sujit532@gmail.com |    1 | sujit  |    1 |
++----+-------+------------+--------------------+------+--------+------+
+8 rows in set (0.00 sec)
+
+mysql> select * from person inner join person1 on person.id = person1.id;
++----+-------+------+-------+----+-------+------------+
+| id | name  | mno  | email | id | name  | mno        |
++----+-------+------+-------+----+-------+------------+
+|  1 | ram   | 123  | NULL  |  1 | sham  | 7894561234 |
+|  2 | anjli | 4561 | NULL  |  2 | rahul | 7894512365 |
++----+-------+------+-------+----+-------+------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from person left join person2 on person.id = person2.id;
++----+-------+------------+--------------------+------+------+------------+
+| id | name  | mno        | email              | id   | name | mno        |
++----+-------+------------+--------------------+------+------+------------+
+|  1 | ram   | 123        | NULL               |    1 | sham | 7894561235 |
+|  2 | anjli | 4561       | NULL               | NULL | NULL | NULL       |
+|  3 | sham  | 7989       | NULL               | NULL | NULL | NULL       |
+|  4 | sujit | 7894561237 | sujit532@gmail.com | NULL | NULL | NULL       |
++----+-------+------------+--------------------+------+------+------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from person1 right join person2 on person1.id = person2.id;
++------+------+------------+----+------+------------+
+| id   | name | mno        | id | name | mno        |
++------+------+------------+----+------+------------+
+|    1 | sham | 7894561234 |  1 | sham | 7894561235 |
++------+------+------------+----+------+------------+
+1 row in set (0.00 sec)
+
+mysql>

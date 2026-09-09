@@ -1,0 +1,212 @@
+Q.1)what is static programming and dynamic dynamic programing?
+-1. Static Programming
+    Static programming refers to using static members (variables and methods) that belong to the class, not to individual objects.
+
+ 2. Dynamic Programming
+   In Java, "dynamic programming" is often used informally to mean creating objects at runtime using the new keyword. (In computer science, Dynamic                 Programming is also a problem-solving technique, explained below.)
+
+Q.2)type of variable?
+-1.. Local Variable
+    -Declared inside a method, constructor, or block.
+    -Can only be used within that method or block.
+    -It must be initialized before use.
+
+2. Instance Variable (Non-static Variable)
+  -Declared inside a class but outside any method.
+  -Every object gets its own copy.
+  -Created when an object is created.
+
+3. Static Variable (Class Variable)
+   -Declared using the static keyword.
+   -Belongs to the class, not to objects.
+   -Only one copy is shared by all objects.
+
+Q.3)primitive data type and non privimitive data type?
+-1. Primitive Data Types
+    Primitive data types are predefined by Java and store actual values directly.
+
+ 2. Non-Primitive Data Types (Reference Data Types)
+     Non-primitive data types are created by the programmer or provided by Java. They store references (addresses) to objects instead of the actual data.
+
+Q.4)Why Java is not purely object-oriented?
+-No. Java is not a purely object-oriented programming language because it supports 8 primitive data types (byte, short, int, long, float, double, char,          boolean), which are not objects. However, Java is considered an object-oriented programming language because it supports classes, objects, and the four        pillars of OOP: encapsulation, inheritance, polymorphism, and abstraction.
+
+
+Q 5)Type Casting in Java?
+-Type Casting is the process of converting one data type into another data type.
+
+ 1. Implicit Type Casting (Widening)
+    -Done automatically by Java.
+    -Converts a smaller data type to a larger data type.
+    -No data loss.
+
+2. Explicit Type Casting (Narrowing)
+   -Done manually by the programmer.
+   -Converts a larger data type to a smaller data type.
+   -May cause data loss.
+
+
+Q.6)Operators in Java?
+-Operator is a special symbol used to perform operations on variables and values.
+
+1. Arithmetic Operators
+
+Used to perform mathematical operations.
+
+Operator	Meaning	Example
++	Addition	a + b
+-	Subtraction	a - b
+*	Multiplication	a * b
+/	Division	a / b
+%	Modulus (Remainder)	a % b
+
+
+2 .Relational (Comparison) Operators
+
+Used to compare two values. The result is always true or false.
+
+Operator	Meaning
+==	Equal to
+!=	Not equal to
+>	Greater than
+<	Less than
+>=	Greater than or equal to
+<=	Less than or equal to
+
+
+3. Logical Operators
+
+Used to combine two or more conditions.
+
+Operator	Meaning
+&&	Logical AND
+`	
+!	Logical NOT
+
+
+4. Assignment Operators
+
+Used to assign values to variables.
+
+Operator	Example
+=	a = 10
++=	a += 5
+-=	a -= 5
+*=	a *= 2
+/=	a /= 2
+%=	a %= 2
+
+
+5. Unary Operators
+
+Operate on a single operand.
+
+Operator	Meaning
++	Unary plus
+-	Unary minus
+++	Increment
+--	Decrement
+!	Logical NOT
+
+
+Post-Increment
+int a = 5;
+System.out.println(a++); // 5
+System.out.println(a);   // 6
+Pre-Decrement
+int a = 5;
+System.out.println(--a); // 4
+Post-Decrement
+int a = 5;
+System.out.println(a--); // 5
+System.out.println(a);   // 4
+
+
+7. Ternary Operator
+
+A shorthand for the if-else statement.
+
+Syntax:
+
+condition ? expression1 : expression2;
+
+
+Q.7)what is control statement?
+- A Control Statement is a statement that controls the flow of execution of a Java program. It decides which statements will execute, how many times they execute, and in what order.
+
+1. Selection (Decision-Making) Statements
+
+These statements execute code based on a condition.
+
+Types:
+if
+if-else
+else-if
+nested if
+switch
+Example (if-else)
+public class IfElseDemo {
+    public static void main(String[] args) {
+        int age = 18;
+
+        if (age >= 18) {
+            System.out.println("Eligible to vote");
+        } else {
+            System.out.println("Not eligible to vote");
+        }
+    }
+}
+
+Output:
+
+Eligible to vote
+2. Looping (Iteration) Statements
+
+These statements execute a block of code repeatedly until a condition becomes false.
+
+Types:
+for
+while
+do-while
+Example (for loop)
+public class ForLoopDemo {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(i);
+        }
+    }
+}
+
+
+
+3. Jump Statements
+
+These statements change the normal flow of program execution.
+
+Types:
+break → Terminates the loop or switch.
+continue → Skips the current iteration and moves to the next iteration.
+return → Exits from a method.
+Example (break)
+public class BreakDemo {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 5; i++) {
+            if (i == 3)
+                break;
+
+            System.out.println(i);
+        }
+    }
+}
+
+Q.8)What is Bytecode in Java?
+-Bytecode is the intermediate code generated by the Java compiler (javac) after compiling a Java source file (.java). It is stored in a .class file and is executed by the Java Virtual Machine (JVM).
+
+
+Q.9)what is main method in java and why it is static?
+-The main() method is the entry point of a Java program. The JVM starts executing the program from the main() method.
+
+Syntax
+public static void main(String[] args) {
+    // Program starts here
+}

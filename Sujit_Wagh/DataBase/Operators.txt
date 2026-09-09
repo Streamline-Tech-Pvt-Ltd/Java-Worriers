@@ -1,0 +1,235 @@
+mysql> use employee;
+Database changed
+mysql> create table blogs(id int primary key, blog varchar(100) update_at timestamp default current_timestamp);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'update_at timestamp default current_timestamp)' at line 1
+mysql> create table blogs(id int primary key, blog varchar(100), update_at timestamp default current_timestamp);
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> insert into blogs(id,blog) values(1,'java is programming language');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into blogs(id,blog) values(2,'core java');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from blogs;
++----+------------------------------+---------------------+
+| id | blog                         | update_at           |
++----+------------------------------+---------------------+
+|  1 | java is programming language | 2026-05-14 19:26:21 |
+|  2 | core java                    | 2026-05-14 19:26:49 |
++----+------------------------------+---------------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from em_info;
++----+---------+---------+-----------+--------+
+| id | fname   | lname   | dept      | salary |
++----+---------+---------+-----------+--------+
+|  1 | sujit   | wagh    | hr        |  85000 |
+|  2 | sahil   | chavan  | Manager   |  85000 |
+|  3 | shubham | salpure | team lead |  85000 |
+|  4 | harsh   | kale    | developer |  60000 |
++----+---------+---------+-----------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select id,fname,lname, dept,salary,salary+1000 as add_salary from em_info;
++----+---------+---------+-----------+--------+------------+
+| id | fname   | lname   | dept      | salary | add_salary |
++----+---------+---------+-----------+--------+------------+
+|  1 | sujit   | wagh    | hr        |  85000 |      86000 |
+|  2 | sahil   | chavan  | Manager   |  85000 |      86000 |
+|  3 | shubham | salpure | team lead |  85000 |      86000 |
+|  4 | harsh   | kale    | developer |  60000 |      61000 |
++----+---------+---------+-----------+--------+------------+
+4 rows in set (0.01 sec)
+
+mysql> select id,fname,lname,dept,salary,salary-500 as sub_salary from em_info ;
++----+---------+---------+-----------+--------+------------+
+| id | fname   | lname   | dept      | salary | sub_salary |
++----+---------+---------+-----------+--------+------------+
+|  1 | sujit   | wagh    | hr        |  85000 |      84500 |
+|  2 | sahil   | chavan  | Manager   |  85000 |      84500 |
+|  3 | shubham | salpure | team lead |  85000 |      84500 |
+|  4 | harsh   | kale    | developer |  60000 |      59500 |
++----+---------+---------+-----------+--------+------------+
+4 rows in set (0.00 sec)
+
+mysql> select id,fname,lname,dept,salary,salary*2  as mul_salary from em_info;
++----+---------+---------+-----------+--------+------------+
+| id | fname   | lname   | dept      | salary | mul_salary |
++----+---------+---------+-----------+--------+------------+
+|  1 | sujit   | wagh    | hr        |  85000 |     170000 |
+|  2 | sahil   | chavan  | Manager   |  85000 |     170000 |
+|  3 | shubham | salpure | team lead |  85000 |     170000 |
+|  4 | harsh   | kale    | developer |  60000 |     120000 |
++----+---------+---------+-----------+--------+------------+
+4 rows in set (0.00 sec)
+
+mysql> select id,fname,lname,dept,salary,salary/2 as divide_salary from em_info;
++----+---------+---------+-----------+--------+---------------+
+| id | fname   | lname   | dept      | salary | divide_salary |
++----+---------+---------+-----------+--------+---------------+
+|  1 | sujit   | wagh    | hr        |  85000 |    42500.0000 |
+|  2 | sahil   | chavan  | Manager   |  85000 |    42500.0000 |
+|  3 | shubham | salpure | team lead |  85000 |    42500.0000 |
+|  4 | harsh   | kale    | developer |  60000 |    30000.0000 |
++----+---------+---------+-----------+--------+---------------+
+4 rows in set (0.00 sec)
+
+mysql> select id,fname,lname,dept,salary,salary%2 as modules_salary from em_info;
++----+---------+---------+-----------+--------+----------------+
+| id | fname   | lname   | dept      | salary | modules_salary |
++----+---------+---------+-----------+--------+----------------+
+|  1 | sujit   | wagh    | hr        |  85000 |              0 |
+|  2 | sahil   | chavan  | Manager   |  85000 |              0 |
+|  3 | shubham | salpure | team lead |  85000 |              0 |
+|  4 | harsh   | kale    | developer |  60000 |              0 |
++----+---------+---------+-----------+--------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> select id,fname,lname,dept,salary,salry=85000 from em_info;
+ERROR 1054 (42S22): Unknown column 'salry' in 'field list'
+mysql> select id,fname,lname,dept,salary,salary=85000 from em_info;
++----+---------+---------+-----------+--------+--------------+
+| id | fname   | lname   | dept      | salary | salary=85000 |
++----+---------+---------+-----------+--------+--------------+
+|  1 | sujit   | wagh    | hr        |  85000 |            1 |
+|  2 | sahil   | chavan  | Manager   |  85000 |            1 |
+|  3 | shubham | salpure | team lead |  85000 |            1 |
+|  4 | harsh   | kale    | developer |  60000 |            0 |
++----+---------+---------+-----------+--------+--------------+
+4 rows in set (0.01 sec)
+
+mysql> select * from em_info where salary=85000;
++----+---------+---------+-----------+--------+
+| id | fname   | lname   | dept      | salary |
++----+---------+---------+-----------+--------+
+|  1 | sujit   | wagh    | hr        |  85000 |
+|  2 | sahil   | chavan  | Manager   |  85000 |
+|  3 | shubham | salpure | team lead |  85000 |
++----+---------+---------+-----------+--------+
+3 rows in set (0.01 sec)
+
+mysql> select * from em_info where salary>60000;
++----+---------+---------+-----------+--------+
+| id | fname   | lname   | dept      | salary |
++----+---------+---------+-----------+--------+
+|  1 | sujit   | wagh    | hr        |  85000 |
+|  2 | sahil   | chavan  | Manager   |  85000 |
+|  3 | shubham | salpure | team lead |  85000 |
++----+---------+---------+-----------+--------+
+3 rows in set (0.01 sec)
+
+mysql> select * from em_info where salary<85000;
++----+-------+-------+-----------+--------+
+| id | fname | lname | dept      | salary |
++----+-------+-------+-----------+--------+
+|  4 | harsh | kale  | developer |  60000 |
++----+-------+-------+-----------+--------+
+1 row in set (0.00 sec)
+
+mysql> select * from em_info where salary>=60000;
++----+---------+---------+-----------+--------+
+| id | fname   | lname   | dept      | salary |
++----+---------+---------+-----------+--------+
+|  1 | sujit   | wagh    | hr        |  85000 |
+|  2 | sahil   | chavan  | Manager   |  85000 |
+|  3 | shubham | salpure | team lead |  85000 |
+|  4 | harsh   | kale    | developer |  60000 |
++----+---------+---------+-----------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select * from em_info where salary!=85000;
++----+-------+-------+-----------+--------+
+| id | fname | lname | dept      | salary |
++----+-------+-------+-----------+--------+
+|  4 | harsh | kale  | developer |  60000 |
++----+-------+-------+-----------+--------+
+1 row in set (0.00 sec)
+
+mysql> select * from em_info where dept='manager'and salary=85000;
++----+-------+--------+---------+--------+
+| id | fname | lname  | dept    | salary |
++----+-------+--------+---------+--------+
+|  2 | sahil | chavan | Manager |  85000 |
++----+-------+--------+---------+--------+
+1 row in set (0.01 sec)
+
+mysql> select * from em_info where dept='hr'or salary=60000;
++----+-------+-------+-----------+--------+
+| id | fname | lname | dept      | salary |
++----+-------+-------+-----------+--------+
+|  1 | sujit | wagh  | hr        |  85000 |
+|  4 | harsh | kale  | developer |  60000 |
++----+-------+-------+-----------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select * from em_info where dept='manager' or salary=85000;
++----+---------+---------+-----------+--------+
+| id | fname   | lname   | dept      | salary |
++----+---------+---------+-----------+--------+
+|  1 | sujit   | wagh    | hr        |  85000 |
+|  2 | sahil   | chavan  | Manager   |  85000 |
+|  3 | shubham | salpure | team lead |  85000 |
++----+---------+---------+-----------+--------+
+3 rows in set (0.00 sec)
+
+mysql> select * from em_info where dept in('hr','manager');
++----+-------+--------+---------+--------+
+| id | fname | lname  | dept    | salary |
++----+-------+--------+---------+--------+
+|  1 | sujit | wagh   | hr      |  85000 |
+|  2 | sahil | chavan | Manager |  85000 |
++----+-------+--------+---------+--------+
+2 rows in set (0.01 sec)
+
+mysql> select * from em_info where dept not in('hr','manager');
++----+---------+---------+-----------+--------+
+| id | fname   | lname   | dept      | salary |
++----+---------+---------+-----------+--------+
+|  3 | shubham | salpure | team lead |  85000 |
+|  4 | harsh   | kale    | developer |  60000 |
++----+---------+---------+-----------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select * from em_info where salary between 60000 and 85000;
++----+---------+---------+-----------+--------+
+| id | fname   | lname   | dept      | salary |
++----+---------+---------+-----------+--------+
+|  1 | sujit   | wagh    | hr        |  85000 |
+|  2 | sahil   | chavan  | Manager   |  85000 |
+|  3 | shubham | salpure | team lead |  85000 |
+|  4 | harsh   | kale    | developer |  60000 |
++----+---------+---------+-----------+--------+
+4 rows in set (0.01 sec)
+
+mysql> select fname,lname,salary case when salary>=85000 then 'high salary'else 'low salary' end as salary_category from em_info;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'case when salary>=85000 then 'high salary'else 'low salary' end as salary_catego' at line 1
+mysql> select fname,lname,salary case when salary>=85000 then 'high salary',else 'low salary', end as salary_category from em_info;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'case when salary>=85000 then 'high salary',else 'low salary', end as salary_cate' at line 1
+mysql> select fname,lname,salary, case when salary>=85000 then 'high salary'else 'low salary' end as salary_category from em_info;
++---------+---------+--------+-----------------+
+| fname   | lname   | salary | salary_category |
++---------+---------+--------+-----------------+
+| sujit   | wagh    |  85000 | high salary     |
+| sahil   | chavan  |  85000 | high salary     |
+| shubham | salpure |  85000 | high salary     |
+| harsh   | kale    |  60000 | low salary      |
++---------+---------+--------+-----------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from em_info where fname is null;
+Empty set (0.00 sec)
+
+mysql> select * form em_info where fname not like'%h';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'form em_info where fname not like'%h'' at line 1
+mysql> select * from em_info where fname not like'%h';
++----+---------+---------+-----------+--------+
+| id | fname   | lname   | dept      | salary |
++----+---------+---------+-----------+--------+
+|  1 | sujit   | wagh    | hr        |  85000 |
+|  2 | sahil   | chavan  | Manager   |  85000 |
+|  3 | shubham | salpure | team lead |  85000 |
++----+---------+---------+-----------+--------+
+3 rows in set (0.01 sec)
+
+mysql>

@@ -1,0 +1,365 @@
+1) What is Computer?
+
+A computer is an electronic device that accepts input, processes data, stores information, and gives the required output.
+
+Example: Laptop, Desktop, Smartphone.
+
+2) What is Software?
+
+Software is a set of instructions (programs) that tells the computer what to do.
+
+Types of Software
+1. System Software
+
+It manages the computer hardware and provides a platform for application software.
+
+Examples:
+
+Windows
+Linux
+macOS
+Android
+Device Drivers
+2. Application Software
+
+It is designed to perform specific tasks for users.
+
+Examples:
+
+MS Word
+MS Excel
+Google Chrome
+VLC Media Player
+Photoshop
+3) What is Hardware?
+
+Hardware is the physical part of a computer that we can see and touch.
+
+Examples:
+
+Keyboard
+Mouse
+Monitor
+CPU
+Printer
+Hard Disk
+RAM
+Scanner
+4) What is Program?
+
+A program is a collection of instructions written in a programming language to perform a specific task.
+
+Example: Calculator Program, Student Management System.
+
+5) What is Programming?
+
+Programming is the process of writing, testing, and maintaining computer programs.
+
+6) Types of Programming
+Procedural Programming
+Uses functions.
+Example: C
+Object-Oriented Programming (OOP)
+Uses classes and objects.
+Example: Java, C++
+Functional Programming
+Uses functions.
+Example: Haskell
+Logic Programming
+Based on logical rules.
+Example: Prolog
+7) What is Programming Language? Its Types
+
+A programming language is a language used to communicate with a computer.
+
+Types
+1. Machine Language (1GL)
+Binary (0 and 1)
+Fast but difficult.
+2. Assembly Language (2GL)
+Uses mnemonics like MOV, ADD.
+Requires an assembler.
+3. High-Level Language (3GL)
+Easy to understand.
+Examples: Java, C, Python, C++
+4. Fourth Generation Language (4GL)
+Database-oriented.
+Example: SQL
+5. Fifth Generation Language (5GL)
+AI based.
+Example: Prolog
+8) What is Algorithm?
+
+An algorithm is a step-by-step procedure to solve a problem.
+
+Real-life Example (Making Tea)
+Boil water.
+Add tea powder.
+Add sugar.
+Add milk.
+Boil for 2 minutes.
+Filter tea.
+Serve.
+9) What is Flowchart?
+
+A flowchart is a graphical representation of an algorithm using symbols.
+
+Symbols
+Oval → Start/Stop
+Rectangle → Process
+Diamond → Decision
+Parallelogram → Input/Output
+Arrow → Flow
+10) What is Pseudocode?
+
+Pseudocode is an informal way of writing program logic using simple English.
+
+Example
+START
+Read A and B
+Sum = A + B
+Print Sum
+STOP
+11) What is Java?
+
+Java is a high-level, object-oriented, platform-independent programming language developed by Sun Microsystems (now Oracle).
+
+Why High-Level?
+
+Because it is easy for humans to read and write.
+
+Example:
+
+System.out.println("Hello");
+
+instead of binary (0 and 1).
+
+Why Object-Oriented?
+
+Because Java uses Classes and Objects.
+
+Example:
+
+class Student{
+}
+Why Platform Independent?
+
+Java source code is converted into Bytecode, which runs on any operating system using the JVM (Java Virtual Machine).
+
+Write Once, Run Anywhere (WORA).
+
+12) Features of Java
+1. Simple
+
+Easy syntax and easy to learn.
+
+2. Object-Oriented
+
+Uses classes and objects.
+
+3. Platform Independent
+
+Runs on any OS using JVM.
+
+4. Secure
+
+No direct memory access and has security features.
+
+5. Robust
+
+Strong memory management and exception handling.
+
+6. Portable
+
+Runs on different platforms without modification.
+
+7. Multithreaded
+
+Can perform multiple tasks simultaneously.
+
+8. High Performance
+
+Uses Just-In-Time (JIT) compiler.
+
+9. Distributed
+
+Supports network programming.
+
+13) History of Java
+Developed by James Gosling.
+Company: Sun Microsystems.
+Year: 1995.
+Original name: Oak.
+Later renamed to Java.
+Now maintained by Oracle Corporation.
+14) JVM, JDK, JRE, JIT (JIP is usually written as JIT)
+          JDK
+   ------------------
+   | Compiler       |
+   | JRE            |
+   ------------------
+         |
+         V
+       JRE
+-----------------------
+| JVM                |
+| Libraries          |
+-----------------------
+         |
+         V
+      Operating System
+JDK (Java Development Kit)
+
+Used for developing Java applications.
+
+Contains:
+
+JRE
+Compiler (javac)
+Debugger
+Development tools
+JRE (Java Runtime Environment)
+
+Used to run Java programs.
+
+Contains:
+
+JVM
+Java Libraries
+JVM (Java Virtual Machine)
+
+Runs Java bytecode and makes Java platform independent.
+
+JIT (Just-In-Time Compiler)
+
+Converts bytecode into machine code at runtime for faster execution.
+
+15) What is IDE?
+
+IDE stands for Integrated Development Environment.
+
+It is software used to write, compile, run, and debug programs.
+
+Types
+Eclipse
+IntelliJ IDEA
+NetBeans
+VS Code
+BlueJ
+Uses
+Writing code
+Compiling programs
+Running programs
+Debugging errors
+Auto-completion
+16) Java Compilation Process (Workflow)
+Java Source Code
+      (.java)
+          |
+      javac Compiler
+          |
+      Bytecode (.class)
+          |
+          JVM
+          |
+Machine Code
+          |
+       Output
+Steps
+Write Java code.
+Save as .java.
+Compile using javac.
+Bytecode (.class) is generated.
+JVM converts bytecode to machine code.
+Program executes.
+17) Compiler vs Interpreter
+Compiler	Interpreter
+Converts whole program at once	Converts line by line
+Faster execution	Slower execution
+Errors shown after compilation	Errors shown line by line
+Example: C Compiler	Example: Python Interpreter
+Java uses both:
+Compiler → Converts source code to bytecode.
+JVM (Interpreter + JIT) → Executes bytecode.
+18) What are Keywords?
+
+Keywords are reserved words with predefined meanings in Java.
+
+They cannot be used as variable, class, or method names.
+
+Examples
+class
+public
+static
+void
+int
+if
+else
+while
+return
+new
+this
+super
+final
+
+Java has 50+ reserved keywords.
+
+19) Naming Conventions in Java
+Class Name
+
+PascalCase
+
+StudentDetails
+Variable Name
+
+camelCase
+
+studentName
+Method Name
+
+camelCase
+
+calculateTotal()
+Constant
+
+UPPER_CASE
+
+MAX_SIZE
+Package Name
+
+Lowercase
+
+com.example.project
+20) Use of new Keyword
+
+The new keyword is used to create an object and allocate memory.
+
+Example
+class Student {
+}
+
+public class Demo {
+    public static void main(String[] args) {
+        Student s = new Student();
+    }
+}
+
+Here:
+
+new Student() creates a new object.
+Memory is allocated.
+The constructor is called automatically.
+⭐ Important Viva Questions
+What is Java?
+Why is Java platform independent?
+What is Bytecode?
+Difference between JDK, JRE, and JVM.
+Features of Java.
+What is IDE?
+Compiler vs Interpreter.
+What is an Algorithm?
+What is a Flowchart?
+What is Pseudocode?
+What is the use of the new keyword?
+
+These answers are written in simple language and are suitable for FY MSc/MCA/BCA/BSc CS viva and university exams.

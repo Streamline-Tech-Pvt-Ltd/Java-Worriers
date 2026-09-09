@@ -1,0 +1,297 @@
+1)What is Coupling?
+
+Coupling is the degree of dependency between two classes or modules.
+
+If one class depends heavily on another, it is called Tight Coupling.
+If one class depends very little on another, it is called Loose Coupling.
+
+Definition (Exam):
+
+Coupling is the measure of how strongly two classes or modules are connected or depend on each other.
+
+Types of Coupling
+1) Tight Coupling
+
+In tight coupling, one class is directly dependent on another class.
+
+Characteristics
+High dependency.
+Difficult to modify or test.
+Reusability is low.
+Example
+class Engine {
+    void start() {
+        System.out.println("Engine Started");
+    }
+}
+
+class Car {
+    Engine engine = new Engine();   // Direct dependency
+
+    void drive() {
+        engine.start();
+        System.out.println("Car is moving");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car c = new Car();
+        c.drive();
+    }
+}
+Output
+Engine Started
+Car is moving
+Explanation
+Car directly creates an Engine object.
+If the Engine class changes, the Car class may also need changes.
+This is Tight Coupling.
+2) Loose Coupling
+
+In loose coupling, classes communicate through an interface or abstraction instead of depending directly on each other.
+
+Characteristics
+Low dependency.
+Easy to maintain and test.
+High reusability.
+Flexible design.
+Example
+interface Engine {
+    void start();
+}
+
+class PetrolEngine implements Engine {
+    public void start() {
+        System.out.println("Petrol Engine Started");
+    }
+}
+
+class DieselEngine implements Engine {
+    public void start() {
+        System.out.println("Diesel Engine Started");
+    }
+}
+
+class Car {
+    Engine engine;
+
+    Car(Engine engine) {
+        this.engine = engine;
+    }
+
+    void drive() {
+        engine.start();
+        System.out.println("Car is moving");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Engine e = new PetrolEngine();
+        Car c = new Car(e);
+        c.drive();
+    }
+}
+Output
+Petrol Engine Started
+Car is moving
+Explanation
+Car depends on the Engine interface, not a specific engine class.
+You can easily replace PetrolEngine with DieselEngine without changing the Car class.
+This is Loose Coupling.
+
+2)What is Association in Java?
+
+Association is an object-oriented relationship in which one object is connected to another object. Both objects are independent, meaning they can exist without each other.
+
+Definition (Exam)
+
+Association is a relationship between two independent classes where one object uses or is connected to another object.
+
+Example (Teacher and Student)
+A Teacher teaches a Student.
+A Teacher can exist without a Student.
+A Student can exist without a Teacher.
+
+This is an Association relationship.
+
+Java Example
+class Teacher {
+    String name;
+
+    Teacher(String name) {
+        this.name = name;
+    }
+
+    void teach() {
+        System.out.println(name + " is teaching.");
+    }
+}
+
+class Student {
+    String name;
+
+    Student(String name) {
+        this.name = name;
+    }
+
+    void study(Teacher t) {
+        System.out.println(name + " is studying from " + t.name);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Teacher t = new Teacher("Rahul");
+        Student s = new Student("Amit");
+
+        t.teach();
+        s.study(t);
+    }
+}
+Output
+Rahul is teaching.
+Amit is studying from Rahul
+
+3)what is aggregation
+What is Aggregation in Java?
+
+Aggregation is a special type of Association that represents a weak "Has-A" relationship between two classes.
+
+In Aggregation:
+
+The child object can exist independently of the parent object.
+If the parent object is destroyed, the child object still exists.
+Definition (Exam)
+
+Aggregation is a weak "Has-A" relationship where one class contains a reference to another class, and both objects can exist independently.
+
+Real-Life Example
+College and Student
+A College has Students.
+If the College is closed, the Students still exist and can join another college.
+
+This is Aggregation.
+
+Java Example
+class Student {
+    String name;
+
+    Student(String name) {
+        this.name = name;
+    }
+}
+
+class College {
+    String collegeName;
+    Student student;
+
+    College(String collegeName, Student student) {
+        this.collegeName = collegeName;
+        this.student = student;
+    }
+
+    void display() {
+        System.out.println(student.name + " studies in " + collegeName);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s = new Student("Rahul");
+        College c = new College("ABC College", s);
+
+        c.display();
+    }
+}
+Output
+Rahul studies in ABC College
+Explanation
+College has a Student object.
+The Student object is created outside the College class.
+Even if the College object is deleted, the Student object still exists.
+Therefore, it is Aggregation.
+Characteristics of Aggregation
+It represents a Has-A relationship.
+It is a weak relationship.
+Parent and child objects are independent.
+Improves code reusability.
+
+
+4)What is Composition in Java?
+
+Composition is a special type of Association that represents a strong "Has-A" relationship between two classes.
+
+In Composition:
+
+The child object cannot exist without the parent object.
+If the parent object is destroyed, the child object is also destroyed.
+Definition (Exam)
+
+Composition is a strong "Has-A" relationship in which one class contains another class, and the child object cannot exist independently of the parent object.
+
+Real-Life Example
+House and Room
+A House has Rooms.
+If the House is demolished, the Rooms also cease to exist.
+
+This is Composition.
+
+Java Example
+class Room {
+    Room() {
+        System.out.println("Room Created");
+    }
+}
+
+class House {
+    private Room room;
+
+    House() {
+        room = new Room();   // Room is created inside House
+    }
+
+    void display() {
+        System.out.println("House has a Room");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        House h = new House();
+        h.display();
+    }
+}
+Output
+Room Created
+House has a Room
+Explanation
+House creates the Room object inside its constructor.
+The Room object belongs to the House.
+If the House object is destroyed, the Room object is also destroyed.
+Therefore, this is Composition.
+Characteristics of Composition
+It represents a strong Has-A relationship.
+The child object depends on the parent object.
+The child object cannot exist independently.
+Used when one object completely owns another.
+
+5)Difference Between Inheritance and Association in Java
+Inheritance													Association
+Represents an "Is-A" relationship.							Represents a "Uses-A" or "Has-A" relationship.
+One class inherits properties and methods from another class.	One class is connected to or uses another class.
+Uses the extends keyword.									Uses object references.
+Child class can access parent class members.					Each class remains independent.
+Used for code reusability.									Used to represent relationships between objects.
+Example: Dog is an Animal.								Example: Teacher teaches Student
+
+6)Diffrence between overloading and overridinge
+Difference Between Method Overloading and Method Overriding in Java
+Method Overloading											Method Overriding
+Same method name with different parameters.					Same method name and same parameters.
+Occurs in the same class.									Occurs in parent and child classes.
+Achieved using compile-time polymorphism.					Achieved using runtime polymorphism.
+Inheritance is not required.									Inheritance is required.
+Return type may be the same or differen					.	Return type should be the same or compatible.
+Improves code readability.									Provides a specific implementation of the parent method.

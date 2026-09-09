@@ -1,0 +1,72 @@
+mysql> use employee;
+Database changed
+mysql> select * from em_info;
++----+---------+---------+-----------+--------+
+| id | fname   | lname   | dept      | salary |
++----+---------+---------+-----------+--------+
+|  1 | sujit   | wagh    | hr        |  85000 |
+|  2 | sahil   | chavan  | Manager   |  85000 |
+|  3 | shubham | salpure | team lead |  85000 |
+|  4 | harsh   | kale    | developer |  60000 |
++----+---------+---------+-----------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select max(salary) as maxsalary from em_info;
++-----------+
+| maxsalary |
++-----------+
+|     85000 |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> select id,fname,lname,dept,salary from em_info where salary=(select max(salary) from em_info);
++----+---------+---------+-----------+--------+
+| id | fname   | lname   | dept      | salary |
++----+---------+---------+-----------+--------+
+|  1 | sujit   | wagh    | hr        |  85000 |
+|  2 | sahil   | chavan  | Manager   |  85000 |
+|  3 | shubham | salpure | team lead |  85000 |
++----+---------+---------+-----------+--------+
+3 rows in set (0.00 sec)
+
+mysql> select min(salary) from em_info;
++-------------+
+| min(salary) |
++-------------+
+|       60000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select * from em_info where salary=(select min(salary) from em_info;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> select id,fname,lname,dept,salary from em_info where salary=(select min(salary) from em_info;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> select id,fname,lname,dept,salary from em_info where salary=(select min(salary) from em_info);
++----+-------+-------+-----------+--------+
+| id | fname | lname | dept      | salary |
++----+-------+-------+-----------+--------+
+|  4 | harsh | kale  | developer |  60000 |
++----+-------+-------+-----------+--------+
+1 row in set (0.00 sec)
+
+mysql> select dept, sum(salary) from em_info group by dept;
++-----------+-------------+
+| dept      | sum(salary) |
++-----------+-------------+
+| hr        |       85000 |
+| Manager   |       85000 |
+| team lead |       85000 |
+| developer |       60000 |
++-----------+-------------+
+4 rows in set (0.00 sec)
+
+mysql> select dept, avg(salary) from em_info group by dept;
++-----------+-------------+
+| dept      | avg(salary) |
++-----------+-------------+
+| hr        |  85000.0000 |
+| Manager   |  85000.0000 |
+| team lead |  85000.0000 |
+| developer |  60000.0000 |
++-----------+-------------+
+4 rows in set (0.00 sec)
