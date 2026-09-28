@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="in.st.beans.QuestionAnswer" id="qesId()">
+		<constructor-arg type="int" value="1"></constructor-arg>
+		<constructor-arg type="String" value="Collection FrameWork in Java"></constructor-arg>
+		<constructor-arg>
+			<list>
+				
+				<value>it has classes and interfacess</value>
+				<value>it is organised structure of classes and interfaces</value>
+			</list>
+
+
+		</constructor-arg>
+
+	</bean>
+
+</beans>
