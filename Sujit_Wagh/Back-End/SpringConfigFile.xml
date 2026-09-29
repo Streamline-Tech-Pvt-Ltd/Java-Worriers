@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   <bean class="com.stream.Demo.Question" id="QueId">
+   <constructor-arg type="int" value="1" ></constructor-arg>
+   <constructor-arg type="String" value="What Is Java"></constructor-arg>
+   <constructor-arg>
+   <list>
+     <ref bean="ans1" />
+       <ref bean="ans2" />
+   </list>
+   </constructor-arg>
+   </bean>
+   
+   
+   
+   <bean class="com.stream.Demo.Answer" id="ans1">
+   <constructor-arg type="int" value="1"></constructor-arg>
+   <constructor-arg type="String" value="Java Is Programming Language"></constructor-arg>
+   <constructor-arg type="String" value="Saras"></constructor-arg>
+   </bean>
+   
+      <bean class="com.stream.Demo.Answer" id="ans2">
+   <constructor-arg type="int" value="2"></constructor-arg>
+   <constructor-arg type="String" value="Java Is BackEnd Language"></constructor-arg>
+   <constructor-arg type="String" value="Rushi"></constructor-arg>
+   </bean>
+   
+        
+
+</beans>
