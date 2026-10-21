@@ -1,0 +1,116 @@
+Q 1 What is Java? What are its main features?
+Ans:- Java is a high level of programming language.
+Following  the some features
+1.Object-oriented Programming language
+2.Platfrom independent 
+3.Security
+4.Simple
+Q 2. Why is Java called platform-independent?
+Ans:- The Write Once Run Anywhere .”Java Compiler can generate the byte code file and save to environment..
+Q 3. What is the difference between JDK, JRE, and JVM?
+Ans:-JDK-Java Development Kit its provide the various type of tools in java developer testing , Debugging etc.
+JRE –Java Run-Time Environment Provide the runtime file of execucation and support .
+JVM – Java Virtual Machine . To convert the byte code into a machine code . T understand the machine level.
+Q.4 How does a Java program execute internally?
+Following the steps
+1 Write the code .
+2. Compilation the code.(Source Code -> Byte Code)
+3. Execution the code(Byte Code -> Machine Code)
+Q 5. What is bytecode in Java?
+Ans: Byte Code is the intermediate code , machine independent code generate by the java compiler when compile the java source code .
+Q 6 What is the difference between compiled and interpreted languages?
+Compiled                                                                                                     Interpreted
+1.All code can scan the same time                                                   Line by line code scan
+2 Execution Speed Faster                                                          Execution Speed Slower
+3. Platform dependent                                                               Plateform-Independent
+Q 7  . What are the primitive data types in Java?
+Ans :- Basic Data Types in java
+1.Int 
+2.Boolean
+3.Float
+4.Double
+5.Short
+6.Long
+7.Byte
+8.Char
+Q 8.What is the difference between primitive and non-primitive data types?
+Primitive                                                                          Non Primitive
+1 Store the actual value                                         store reference memory
+2.predefined                                                             user defined
+3 fixed size                                                              Variable size depend
+Q 9. What are variables in Java, and what are their types?
+Ans :- It’s a container to store the data can accessed the execution of the program
+Types 
+1.Local Variable
+2.Instance   Variable(Non Static )
+3 Static Variable(Class Variable)
+Q 10 What is the difference between local, instance, and static variables?
+Local                                               Instance                                   static
+1 Declared inside the body            Declared inside the class       Inside the class outside 
+& method                                           outside method                       the method but always use in the 
+                                                                                                                         Static keyword
+2 scope only in the method            only in class                                            only class
+Q 11 . What are the different types of operators in Java?
+Following The Operators
+1 Arithmetic Operators
+2 .Logical Operators
+3.Assignment Operators
+4 .Comparison  Operators
+5 .Ternary Operators
+6.Unary Operators
+Q 12 . What is the difference between == and .equals()?
+Ans   ==                  .equals()
+1. Operators                                             Method
+2 compares memory address            compares actual data values
+Q 13 . What is the difference between && and &?
+Ans &&                                                                              &
+1 . Logical Operators                                                          Bit Wise Operators
+2 One condition is true its true                               Both condition is true return true
+Q 14. What is the difference between break, continue, and return?
+Feature	continue	break	return
+Scope of Impact	Affects the current iteration (step) of a loop.	Affects the entire loop or switch block.	Affects the entire method.
+Action Taken	Skips the rest of the code in the current cycle and jumps to the next cycle.	Terminates the loop immediately and jumps out of it.	Exits the method completely and passes control back to the caller
+
+ Q 15 . What is the difference between if-else and switch?
+If-else                                                                  switch
+1 It’s a condition statement                            it’s a statement
+2 . one condition can check                             Multiple statement can provide
+Is false to check another condition                 Choose the one statement
+Can check 
+Q 16 What are loops in Java? Explain for, while, and do-while.
+Ans Used to block of code execute long time
+for (initialization; condition; increment/decrement) 
+{ // code to be executed 
+}
+While :- To check the first condition and after to enter the code 
+While loop is also use to how times code can execute is fixed
+Syntax 
+Initialization 
+While(Condition)
+{
+Increment
+}
+Do-While :-One code can always execute and after termination code 
+Syntax :
+Int i=10;
+Do{
+System.out.println(i);
+i++;
+}
+While(i<=3);
+Q .17 What is an array in Java?
+Ans:Array is the container to stored the same type of data .
+Q.18 What is the difference between a one-dimensional and a multidimensional array?
+One Dimensional                                                                                        MultiDimensional
+1.Structure Linear Layout                                                                          Grid Layout 
+2 . a single object value holding                                                             a multiple object value holding 
+3 one index required                                                                                  two or more index required
+Q  19 Can we change the size of an array after creating it?
+Ans No can not change the size of one  create the standard array.\
+Q 20. What is the difference between an array and an ArrayList?
+Ans  Array                                                                                 ArrayList
+1 Fixed Sized                                                                             No fixed sized
+2 same type of data can stored                                            multiple type of data stored
+3 performance faster                                                                   Slower
+
+
