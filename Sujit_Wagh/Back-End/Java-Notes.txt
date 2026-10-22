@@ -113,4 +113,138 @@ Ans  Array                                                                      
 2 same type of data can stored                                            multiple type of data stored
 3 performance faster                                                                   Slower
 
+Q.21 What is object-oriented programming (OOP)?
+Ans:- Object-Oriented Programming (OOP) is a programming paradigm that organizes software design around objects and data, rather than functions and logic.
+Q.22 What is a class, and what is an object?
+Ans:- Class is the blue-print or template in the all code (Logical Entity).
+Object is the instances of the class (Physical Entity).
+Q 23. What are the four pillars of OOP?
+Ans :- Following the pillars
+1.Inheritance
+2.Polymorphism
+3.Abstraction
+4.Encapsulation
+Q 24 . What is encapsulation? Give a real-world example.
+Ans:-Binding the Variable and Method in single unit 
+For Example :-Using the mobile out side button but can not understand and change to function of button.
+Q 25 . What is inheritance in Java?
+Ans:- It’s a part of OOP Concept to denote the parent and child relationship using the extends key word .
+For Ex:- Child can access the parent property and include the self property .using the extends keywords.
+Syntax:
+Class Animal{
+Void sound(){
+System.out.println(“Animal Sound”);
+}
+Class Dog extends Animal{
+void sound(){
+System.out.println(“Dog is barking”);
+}
+Public  class Main{
+Public static void main(String [] args){
+Animal a = new Animal();
+Dog d = new Dog();
+a.sound();
+d.sound();
+}
+}
+Q26.What are the different types of inheritance?
+Ans:-Following the type 
+1.Single Level Inheritance.
+2 Multi- level Inheritance
+3 Multiple Inheritance
+4 .Hybrid Inheritance
+5 Hierarchical Inheritance
+For example 
+1 Single Level Inheritance
+Parent       Child
+2. Multi –Level Inheritance 
+A   -> B  C
+3 Multiple Inheritance 
+Java can  not support the multiple inheritance to occurred the ambiguity problem.
+4. Hierarchical Inheritance 
+AB   and A C
+Q.27 Why does Java not support multiple inheritance through classes?
+Ans :- To avoid the diamond problem .
+For example two parent and single child 
+Q 28 . What is polymorphism?
+Ans:- The part of OOP poly is many and phism is form .(It’s a many form)
+They are two pars divided 
+1.Method OverLoading(Compile Time) 
+Same name but different parameter
+2 Method OverRiding(Run Time) 
+Child class replace the parent class body.
+Q 29 What is the difference between compile-time and runtime polymorphism
+Compile Time                                                                                             Run Time
+1 Method Over-Loading                                                                        2.Method Over-Riding
+2.same name and same parameter                                                  same name and parameter
+3 Speed Faster                                                                                              Speed Slower
+Q 30 . What is method overloading?
+Ans :-Method Over-Loading is the part of polymorphism (Compile-time polymorphism).
+Defn:-Same class and same parameter.
+For Ex:-
+Class Addition{
+Int add(int a , int b)
+{
+Return a+b;
+}
+Int add(int a , int b , int c)
+{
+return a+b+c;
+}
+Q.31 What is method overriding?
+Ans :- it’s a second part of polymorphism(Run-time Polymorphism)
+Same name and same parameter but change the body message.
+For Example:-
+Class Animal{
+Void sound(){
+System.out.println(“Animal Sound”);
+}
+Class Dog extends Animal{
+@overriding
+Void sound(){
+System.out.println(“Dog is Barking”);
+}
+Q.32 What is abstraction in Java?
+Ans:- Hiding the user unused informaction and provide the only used informaction .
+Q 33 . What is the difference between an abstract class and an interface?
+Abstract Class                                                                                        Interface 
+1 Using The Extends KeyWord                                                   Using The Implements Keyword
+2 0 – 90% Abstraction can achive                                                100% Abstraction achive 
+3. only one time class can abstract                                               multiple time can abstract 
+Q 33 What is the difference between this and super?
+This :- Refers the current class object are same
+Super :- referes the parent class object
+Q 34 What is the difference between association, aggregation, and composition?
+Association                                             aggregation                                       composition
+Has a relationship                                  Has a relationship                        part of
+Independent                                                Not Independent                             ownership
+
+Q 35 What is a constructor in Java?
+Ans :- It’s a special block of code can new created object
+Q 36 What are the different types of constructors?
+Ans :- Following the type of constructor
+1 Default Constructor
+2 No Argument Constructor
+3. Parameterized Constructor
+Q 37 What is the difference between a constructor and a method?
+Ans :- Constructor                                                                                method 
+1 it’s a special block of code                                                        Special block of code to performed the
+new create the object.                                                                     Some specific task.
+2. JVM can call constructor automatically                               Method can always class.
+3 . class name and constructor are same                             class name and method name are diff.
+4 For Ex:- public  human(int age ,)                                            For Ex :- void display(){
+{                                                                                                                           System.out.println(“Hello”);
+This.age=age;
+}                                                                                                                                  }
+Q 38. Can a constructor be overloaded?
+Ans:- Yes constructor can overload in java
+Q 39 Can a constructor be overridden?
+Ans:- No Constructor Can not overridden.
+Q 40 . What is constructor chaining?
+Ans :- Constructor chaining is the process of calling one constructor from another constructor relative to the current object.
+
+
+
+
+
 
