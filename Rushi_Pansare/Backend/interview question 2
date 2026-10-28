@@ -1,0 +1,66 @@
+wers
+1. What is the difference between HashMap and TreeMap?
+- HashMap: Stores data in key-value pairs without sorted order.
+- TreeMap: Stores data in key-value pairs sorted by keys.
+- HashMap is generally faster than TreeMap.
+2. What is the difference between Iterator and ListIterator?
+- Iterator: Moves forward through a collection.
+- ListIterator: Moves forward and backward through a list.
+- ListIterator can also add, remove, and update elements.
+3. What is the difference between Comparable and Comparator?
+- Comparable: Used to define the natural sorting order of objects using compareTo().
+- Comparator: Used to define custom sorting using compare().
+- Comparable is implemented inside the class, while Comparator can be defined separately.
+4. What are fail-fast and fail-safe iterators?
+- Fail-fast: May throw an exception if a collection is modified during iteration.
+- Fail-safe: An informal term for iterators that can handle certain modifications, often by using a copy of the data.
+- Example: ArrayList iterator is fail-fast, while CopyOnWriteArrayList uses a snapshot-based iterator.
+5. What is the difference between ArrayList and an array?
+- Array: Has a fixed size.
+- ArrayList: Can grow or shrink as needed.
+- ArrayList provides methods like add() and remove(), while arrays use indexes to access elements.
+6. What is a thread in Java?
+- A thread is a small unit of execution inside a program.
+- It allows a program to perform multiple tasks concurrently.
+- Example: Playing music while downloading a file.
+7. What is the difference between a process and a thread?
+- Process: A program that is currently running.
+- Thread: A unit of execution inside a process.
+- A process has its own memory space, while threads of the same process share memory.
+8. How can you create a thread in Java?
+There are two common ways:
+1. By extending the Thread class.
+2. By implementing the Runnable interface.
+Example:
+class MyThread extends Thread {
+    public void run() {
+        System.out.println("Hello Java");
+    }
+}
+
+
+9. What is the difference between extending Thread and implementing Runnable?
+- Extending Thread: Create a thread by extending the Thread class.
+- Implementing Runnable: Create a task by implementing the Runnable interface.
+- Runnable is more flexible because the class can extend another class.
+10. What is the difference between start() and run()?
+- start(): Starts a new thread and then executes its run() method.
+- run(): Contains the code to be executed.
+- Calling run() directly does not start a new thread.
+11. What is synchronization in Java?
+- Synchronization controls access to shared data when multiple threads are running.
+- It helps prevent two threads from changing shared data at the same time.
+- Java provides the synchronized keyword for this purpose.
+12. What is a deadlock, and how can it be prevented?
+- A deadlock occurs when two or more threads wait for resources held by each other.
+- It can stop the program from making progress.
+- We can prevent it by acquiring locks in a fixed order and avoiding unnecessary nested locks.
+13. What is the difference between sleep() and wait()?
+- sleep(): Pauses a thread for a specified time.
+- wait(): Makes a thread wait until it is notified, interrupted, or times out.
+- Sleep does not release a held lock, while wait releases the object's monitor while waiting.
+14. What is the difference between synchronized and volatile?
+- synchronized: Allows only one thread at a time to execute a protected section using the same lock.
+- volatile: Ensures that changes to a variable are visible to other threads.
+- Synchronized provides locking, while volatile does not.
+- Volatile alone cannot make operations like count++ thread-safe
