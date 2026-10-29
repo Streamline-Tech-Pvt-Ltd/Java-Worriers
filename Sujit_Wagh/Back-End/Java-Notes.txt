@@ -112,7 +112,6 @@ Ans  Array                                                                      
 1 Fixed Sized                                                                             No fixed sized
 2 same type of data can stored                                            multiple type of data stored
 3 performance faster                                                                   Slower
-
 Q.21 What is object-oriented programming (OOP)?
 Ans:- Object-Oriented Programming (OOP) is a programming paradigm that organizes software design around objects and data, rather than functions and logic.
 Q.22 What is a class, and what is an object?
@@ -242,6 +241,89 @@ Q 39 Can a constructor be overridden?
 Ans:- No Constructor Can not overridden.
 Q 40 . What is constructor chaining?
 Ans :- Constructor chaining is the process of calling one constructor from another constructor relative to the current object.
+41. What is the use of the static keyword?
+Ans:- The static keyword is used to create variables and methods that belong to the class rather than individual objects.
+42. Can a static method access non-static variables directly?
+Ans:- No. A static method cannot access non-static variables directly because non-static variables belong to objects.
+43. What is the difference between static and instance methods?
+Ans:-
+Static Method	Instance Method
+Belongs to the class.	Belongs to an object.
+Can be called using the class name.	Usually called using an object.
+Cannot directly access instance variables.	Can directly access instance variables.
+Declared using static.	Declared without static.
+44. What is the use of the final keyword with variables, methods, and classes?
+Ans:- •  Final variable: Cannot be reassigned after initialization.
+•  Final method: Cannot be overridden in a subclass.
+•  Final class: Cannot be extended by another class.
+45. What is a String in Java?
+Ans:- A String is an object used to store a sequence of characters, such as a name or message.
+46. Why are strings immutable in Java?
+Ans:- Immutable means the value cannot be changed after a String object is created.
+47. What is the String Constant Pool?
+Ans:- The String Constant Pool is a special area of JVM memory where String literals can be reused to save memory.
+48. What is the difference between String, StringBuilder, and StringBuffer?
+Ans:-
+String	StringBuilder	StringBuffer
+Immutable	Mutable	Mutable
+Changes create new String objects.	Can modify the same object.	Can modify the same object.
+Good for fixed text.	Good for frequent changes in single-threaded code.	Useful when synchronized, thread-safe modification is needed.
+Immutable objects are safe to share.	Not synchronized.	Synchronized methods provide thread safety.
+49. What is the difference between == and .equals() when comparing strings?
+Ans:- •  == checks whether two references point to the same object.
+•  .equals() checks whether two Strings contain the same characters.
+50. What is the difference between String.valueOf() and toString()?
+Ans:- •  String.valueOf() converts values into Strings. For a null object reference, it returns "null".
+•  toString() returns the String representation of an object. Calling it directly on a null reference causes a NullPointerException.
+51. . What are wrapper classes in Java?
+Ans:- Wrapper classes convert primitive types into objects.
+
+52. What is autoboxing and unboxing?
+Ans:- •  Autoboxing: Automatic conversion of a primitive into its wrapper object.
+•  Unboxing: Automatic conversion of a wrapper object into its primitive value.
+53. What is the difference between int and Integer?
+Ans:-
+int	Integer
+Primitive data type.	Wrapper class.
+Stores an integer value directly.	Stores an integer value in an object.
+Cannot be null.	Can be null.
+Cannot call methods on the value.	Provides methods for conversion and other operations.
+Often preferred for simple calculations.	Useful in collections such as ArrayList<Integer>.
+54. Why should we override equals() and hashCode() together?
+Ans:- We override both methods when we want objects to be compared by their contents rather than their default identity.
+55. What is an exception in Java?
+Ans:- An exception is an event that interrupts the normal flow of a program during execution.
+56. What is the difference between an Error and an Exception?
+
+Ans:-
+Error	Exception
+Usually indicates a serious problem with the JVM or system.	Indicates a condition an application may be able to handle.
+Often difficult to recover from.	Can often be handled using try-catch.
+Example: OutOfMemoryError.	Example: IOException.
+57. What is the difference between checked and unchecked exceptions?
+Ans:-
+Checked Exception	Unchecked Exception
+Checked by the compiler.	Not checked by the compiler at compile time.
+Must be caught or declared with throws.	Does not need to be caught or declared.
+Example: IOException.	Example: NullPointerException.
+58. . What is the difference between throw and throws?
+Ands:-
+throw	throws
+Used to explicitly throw an exception.	Used to declare possible exceptions in a method signature.
+Used inside a method or block.	Used in a method declaration.
+Throws a particular exception object.	Can declare one or more exception types.
+
+
+59. What is the purpose of try, catch, and finally?
+Ans:- •  try: Contains code that may throw an exception.
+•  catch: Handles a matching exception.
+•  finally: Contains cleanup code that normally executes whether an exception occurs or not.
+60. Can we use multiple catch blocks?
+Ans:- Yes, we can use multiple catch blocks with one try block to handle different types of exceptions separately.
+
+
+
+
 
 
 
